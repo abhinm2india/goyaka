@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "John",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Jan 2022"
+    },
+    {
+        "id": 2,
+        "name": "Albin",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Feb 2022"
+    },
+    {
+        "id": 3,
+        "name": "Kesu",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Oct 2022"
+    },
+    {
+        "id": 4,
+        "name": "Rose",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Aug 2022"
+    },
+    {
+        "id": 5,
+        "name": "Jasmin",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Jun 2022"
+    },
+    {
+        "id": 6,
+        "name": "Renu",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Feb 2022"
+    },
+    {
+        "id": 7,
+        "name": "Lal",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Mar 2022"
+    },
+    {
+        "id": 8,
+        "name": "Hafees",
+        "designation": "Software Engineer",
+        "rating": 4.5,
+        "description": "Highly recommended! Probably the most magical place I’ve ever stayed at, amazing location, breathtaking views, really lovely hosts, outstanding food (both veg and non veg) and a really lovely dog Navu who was my dog’s bestie within minutes! Loved that this property is pet friendly and the hosts took amazing care of our dog Ziggy! Thank you so much to Shanu, Daleep and his family, Puran and the chef! ",
+        "date": "Jan 2022"
+    }
+]

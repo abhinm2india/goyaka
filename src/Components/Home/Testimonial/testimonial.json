@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Johnson",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue",
+        "rating":"3.5",
+        "photo":"./images/user.jpg"
+    },
+    {
+        "name": "Jushaid",
+        "message": "Probably the most random thing you have ever seen!",
+        "rating":"4.5",
+        "photo":"./images/user.jpg"
+    },
+    {
+        "name": "Albin",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue",
+        "rating":"2.5",
+        "photo":"./images/user.jpg"
+    },
+    {
+        "name": "Salim",
+        "message": "Probably the most random thing you have ever seen!",
+        "rating":"5",
+        "photo":"./images/user.jpg"
+    },
+    {
+        "name": "Gayathri",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue",
+        "rating":"3.5",
+        "photo":"./images/user.jpg"
+    }
+]
