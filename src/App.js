@@ -21,11 +21,11 @@ function App() {
 
       <Router>
         <Routes>
-          <Route exact path="/goyaka" exact element={<Home />} />
-          <Route path="/goyaka/tour" exact element={<TourPackage />} />
-          <Route path="/goyaka/tour-details" exact element={<SinglePackage />} />
-          <Route path="/goyaka/about-us" exact element={<About />} />
-          <Route path="/goyaka/contact-us" exact element={<ContactUs />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/tour" element={<TourPackage />} />
+          <Route path="/tour-details" element={<SinglePackage />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </Router>
 
