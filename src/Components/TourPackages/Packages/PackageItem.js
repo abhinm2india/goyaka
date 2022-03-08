@@ -1,6 +1,6 @@
-import { Card, CardActionArea, CardActions, CardContent, IconButton, CardMedia, Grid, Rating, Typography, Box } from '@mui/material'
+import { Card, CardActionArea, CardActions, CardContent, IconButton, CardMedia, Grid, Rating, Typography } from '@mui/material'
 import React from 'react'
-import { } from '@mui/icons-material'
+
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { useNavigate } from 'react-router-dom';
 

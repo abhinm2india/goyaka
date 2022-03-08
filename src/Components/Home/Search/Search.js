@@ -1,17 +1,17 @@
-import { StayPrimaryLandscape } from '@material-ui/icons';
-import { Button, Container, FormControl, Grid, TextField } from '@mui/material'
-import { Box } from '@mui/system'
+
+import { Button, Container,  Grid, TextField,Box } from '@mui/material'
+
 import React from 'react'
-import { DatePicker, DesktopDatePicker, LocalizationProvider } from '@mui/lab';
+import { DatePicker,  LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 const Search = () => {
 
-    const [name, setName] = React.useState('Composed TextField');
+    // const [name, setName] = React.useState('Composed TextField');
     const [value, setValue] = React.useState(null);
-    const handleChange = (event) => {
-        setName(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //     setName(event.target.value);
+    // };
 
     return (
         <Container sx={{

@@ -1,5 +1,5 @@
 
-import { createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { createTheme, } from '@mui/material/styles'
 
 const Colors = {
     primary: '#8FC27D',

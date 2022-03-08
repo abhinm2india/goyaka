@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, TextField, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 export const AboutHero = () => {
     return (
         <Container maxWidth='lg'>

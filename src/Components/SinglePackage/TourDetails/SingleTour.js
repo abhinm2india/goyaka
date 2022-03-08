@@ -1,11 +1,10 @@
 import {
     Container, Box, Typography,
     Rating, Paper,
-    BottomNavigation,
-    BottomNavigationAction,
+
     Button, FormControl, InputLabel, Select, MenuItem, TextField, Stack
 } from '@mui/material'
-import { DatePicker, DesktopDatePicker, LocalizationProvider } from '@mui/lab';
+import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import React from 'react'
 import CusReview from '../Review/CusReview'
@@ -44,7 +43,7 @@ const SingleTour = () => {
     return (
         <Container>
             <Box container marginTop={2}>
-            <Box marginTop={3} container sx={{
+                <Box marginTop={3} container sx={{
                     display: 'flex',
                     alignItems: 'flex-start',
                     justifyContent: 'space-between',
@@ -91,7 +90,7 @@ const SingleTour = () => {
                         alignItems: 'center',
 
                         justifyContent: 'space-between',
-                        
+
                     }}>
                         <Rating value={4.5} precision={0.5} readOnly />
                         <Typography variant='body1' color={'primary'} marginLeft={4}>Dubai, Lorem iposum</Typography>
@@ -105,7 +104,7 @@ const SingleTour = () => {
 
                 </Box>
 
-              
+
 
                 <Box container sx={{
                     marginY: '30px',

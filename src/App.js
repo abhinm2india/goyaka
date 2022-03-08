@@ -19,7 +19,7 @@ function App() {
       {/* <About /> */}
       {/* <ContactUs/> */}
 
-      <Router basename="/goyaka">
+      <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/tour" element={<TourPackage />} />
