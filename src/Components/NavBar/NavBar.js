@@ -126,7 +126,7 @@ const NavBar = () => {
             </Button>
             <Button
               // key={page}
-              onClick={() => { navigate("/#"); }}
+              onClick={() => { navigate("/transport"); }}
               color='cusBlack'
 
               sx={{ mr: 4, display: 'block', textTransform: 'capitalize', fontWeight: '500', fontSize: '16px' }}
@@ -157,7 +157,7 @@ const NavBar = () => {
             {/* ))} */}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -185,7 +185,7 @@ const NavBar = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

@@ -8,6 +8,8 @@ import SinglePackage from "./Components/SinglePackage/SinglePackage";
 import About from "./Components/About/About";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Transport from "./Components/Transport/Transport";
+import VehicleDetails from "./Components/Transport/VehicleDetails/VehicleDetails";
 function App() {
   let mytheme = responsiveFontSizes(theme);
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/tour" element={<TourPackage />} />
           <Route path="/tour-details" element={<SinglePackage />} />
+          <Route path="/transport" element={<Transport />} />
+          <Route path="/vehicle-details" element={<VehicleDetails/>}/>
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
