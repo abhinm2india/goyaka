@@ -40,6 +40,7 @@ const Packages = () => {
             })
         }
         else {
+            setRideType(1);
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
                 "pickUpLatitude": "25.087609",
                 "pickUpLongitude": "55.193316",
@@ -114,7 +115,7 @@ const Packages = () => {
 
                     {vehicle.map((data) => (
 
-                        <PackageItem car={data} />
+                        <PackageItem car={data} ride={rideType} />
 
                     ))}
                 </Grid>

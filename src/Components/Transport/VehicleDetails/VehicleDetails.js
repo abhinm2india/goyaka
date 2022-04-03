@@ -1,32 +1,46 @@
 import {
   Container, Box, Typography,
-  Rating, Paper,
-
-  Button, FormControl, InputLabel, Select, MenuItem, TextField, Stack
+  Button, FormControl, InputLabel, Select, MenuItem, TextField, Stack, makeStyles
 } from '@mui/material'
 import { useLocation } from 'react-router-dom';
 import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import React, { useState, useEffect } from 'react'
-import CusReview from '../../SinglePackage/Review/CusReview';
-import TourImages from '../../SinglePackage/TourImages/TourImages';
+
 import { Modal } from '@mui/material';
 import NavBar from '../../NavBar/NavBar';
 import Footer from '../../Footer/Footer';
 import Subscribe from '../../Subscribe/Subscribe';
+import axios from 'axios';
+import UseForm from '../../UseForm/UseForm';
+
+import Controls from '../../Controls/Controls';
+
+import * as Cities from '../Cities';
+
+
+
 
 const VehicleDetails = (props) => {
+  const [bookingType, setBookingType] = useState();
 
   const location = useLocation();
-  // console.log(location.state.car.name);
+
+  console.log(location.state.ride);
 
 
-  const [carDetails, setCarDetails] = useState();
-
-  // setCarDetails(location.state.car)
-
-  // console.log(location.state.car);
-
+  const initialValues = {
+    pickUpLocation: '',
+    dropLocation: '',
+    rideType: location.state.ride,
+    seats: location.state.car.capacity,
+    paymentMode: '',
+    bookingType: bookingType,
+    bookingTimestamp: new Date(),
+    userName: '',
+    userMail: '',
+    userMobile: '',
+  }
 
   const [age, setAge] = React.useState('');
 
@@ -34,7 +48,7 @@ const VehicleDetails = (props) => {
     setAge(event.target.value);
   };
 
-  const [value, setValue] = React.useState(0);
+  // const [value, setValue] = React.useState(0);
   const style = {
     position: 'absolute',
     top: '50%',
@@ -52,11 +66,51 @@ const VehicleDetails = (props) => {
     },
   };
 
+  const controlStyles = {
+    width: '100%',
+    bgcolor: '#000',
+  }
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 
+  //form codes start here...
+
+  const {
+    formValues,
+    setFormValues,
+    handleInputChange
+  } = UseForm(initialValues);
+
+  const paymentmethods = [
+    { id: '1', title: 'Cash' },
+    { id: '2', title: 'Card' },
+
+  ]
+
+  const bookNow = () => {
+    if (location.state.ride === 1) {
+      setBookingType('Route')
+    }
+    if (location.state.ride === 2) {
+      setBookingType('Hourly')
+    }
+    console.log(formValues)
+    // axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking', {
+    //   "pickUpLatitude": "25.087609",
+    //   "pickUpLongitude": "55.193316",
+    //   "destinyLatitude": "25.198765",
+    //   "destinyLongitude": "55.279605",
+    //   "countryShortCode": "US"
+    // }).then(function (response) {
+    //   // setVehicle(response.data.data);
+    // }).catch(function (error) {
+    //   console.log(error);
+    // })
+
+  }
 
 
   return (
@@ -64,7 +118,7 @@ const VehicleDetails = (props) => {
 
       <Container>
         <NavBar />
-        <Box container marginTop={2}>
+        <Box container marginTop={3}>
           <Box marginTop={3} container sx={{
             display: 'flex',
             alignItems: 'flex-start',
@@ -128,10 +182,7 @@ const VehicleDetails = (props) => {
                 }}>{location.state.car.priceText}</Typography>
 
               </Box>
-              <Typography variant='body1'>
-                {location.state.car.shortDesc}
 
-              </Typography>
 
               <Typography variant='body1'>
                 Number of Toll :
@@ -154,7 +205,7 @@ const VehicleDetails = (props) => {
                 {location.state.car.capacity}
               </Typography>
               <Box component='div' marginTop={5}>
-                <Button fullWidth variant='contained' size='medium' disableElevation sx={{
+                <Button variant='contained' size='medium' disableElevation sx={{
                   color: 'primary.white',
                   fontSize: '16px',
                   fontWeight: '600',
@@ -169,81 +220,21 @@ const VehicleDetails = (props) => {
           <Box component='div' marginBottom={10}>
             <Typography variant='body1' sx={
               {
-                textTransform:'capitalize',
+                textTransform: 'capitalize',
               }
             }>
               {location.state.car.shortDesc}
-           
+
             </Typography>
             <Typography variant='body1' sx={
               {
-                textTransform:'capitalize',
+                textTransform: 'capitalize',
               }
             }>
               {location.state.car.longDesc}
-           
+
             </Typography>
           </Box>
-
-
-          {/* <Paper sx={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '10vh',
-          zIndex: 10,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          paddingBottom: '10px',
-          '@media screen and (max-width:678px)': {
-
-            height: 'auto',
-          },
-
-        }} elevation={3}>
-          <Container>
-            <Box container sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              // '@media screen and (max-width:678px)': {
-              //     flexDirection: 'column',
-              // },
-            }}>
-
-              <Box container sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexDirection: 'column',
-              }}>
-                <Typography variant='h6'>{location.state.car.priceText}</Typography>
-                <Rating value={3.5} precision={0.5} readOnly />
-              </Box>
-
-              <Stack direction={{ xs: 'column', sm: 'row' }}
-                spacing={{ xs: 1, sm: 2, md: 4 }} mt={3}>
-
-                <Button fullWidth variant='contained' size='large' disableElevation sx={{
-                  color: 'primary.white',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                }} onClick={handleOpen}>
-                  BOOK NOW
-                </Button>
-              </Stack>
-
-
-
-
-            </Box>
-          </Container>
-
-
-        </Paper> */}
-
 
         </Box>
 
@@ -254,69 +245,65 @@ const VehicleDetails = (props) => {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
+            <Typography variant='h6'>
+              Book Your Car
+            </Typography>
+            <Stack direction="column" component='form' spacing={2} mt={3} autoComplete='off'>
 
-            <Stack direction="column" spacing={3} mt={3}>
-              <TextField fullWidth id="outlined-basic" color="primary" focused label="Your Name" variant="outlined" />
-              <TextField fullWidth id="outlined-basic" color="primary" focused label="Email" variant="outlined" />
-              <TextField fullWidth id="outlined-basic" color="primary" focused label="Phone Number" variant="outlined" />
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Number Of Adult</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={age}
-                  label="Number Of Adult"
-                  onChange={handleChange}
-                >
-                  <MenuItem value={1}>1</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                  <MenuItem value={3}>3</MenuItem>
-                  <MenuItem value={4}>4</MenuItem>
-                  <MenuItem value={5}>5</MenuItem>
-                  <MenuItem value={6}>6</MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Number Of Children</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={age}
-                  label="Number Of Children"
-                  onChange={handleChange}
-                >
-                  <MenuItem value={0}>0</MenuItem>
-                  <MenuItem value={1}>1</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                  <MenuItem value={3}>3</MenuItem>
-                  <MenuItem value={4}>4</MenuItem>
-                  <MenuItem value={5}>5</MenuItem>
-                  <MenuItem value={6}>6</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField fullWidth id="outlined-basic" color="primary" focused label="Your Name" variant="outlined" />
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DatePicker
-                  label="Travel Date"
+              <Controls.Input
+                name='userName'
+                label='Your Name'
+                value={formValues.userName}
+                onChange={handleInputChange}
 
-                  value={value}
-                  onChange={(newValue) => {
-                    setValue(newValue);
-                  }}
-                  renderInput={(params) => <TextField color="primary" focused fullWidth {...params} />}
-                />
+              />
+              <Controls.Input
+                name='userMail'
+                label='Email'
+                value={formValues.userMail}
+                onChange={handleInputChange}
+              />
+              <Controls.Input
+                name='userMobile'
+                label='Phone Number'
+                value={formValues.userMobile}
+                onChange={handleInputChange}
+              />
 
+              <Controls.Select
+                name="pickUpLocation"
+                label="PickUp Location"
+                value={formValues.pickUpLocation}
+                onChange={handleInputChange}
+                options={Cities.Cities()}
 
-              </LocalizationProvider>
+              />
+              <Controls.Select
+                name="dropLocation"
+                label="Drop Location"
+                value={formValues.dropLocation}
+                onChange={handleInputChange}
+                options={Cities.Cities()}
+
+              />
+              <Controls.Select
+                name="paymentMode"
+                label="Payment Mode"
+                value={formValues.paymentMode.title}
+                onChange={handleInputChange}
+                options={paymentmethods}
+
+              />
+
               <Button fullWidth variant='contained' disableElevation sx={{
                 color: 'primary.white',
                 fontSize: '16px',
                 fontWeight: '600',
-              }} onClick={handleOpen}>
+              }} onClick={bookNow}>
                 BOOK NOW
               </Button>
-            </Stack>
 
+            </Stack>
           </Box>
         </Modal>
 
