@@ -16,29 +16,42 @@ const Packages = () => {
 
     useEffect(() => {
         if (rideType === 1) {
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
+                "pickUpLatitude": "25.087609",
+                "pickUpLongitude": "55.193316",
+                "destinyLatitude": "25.198765",
+                "destinyLongitude": "55.279605",
+                "countryShortCode": "US"
+            }).then(function (response) {
+                setVehicle(response.data.data);
+            }).catch(function (error) {
+                console.log(error);
+            })
 
         } else if (rideType === 2) {
-
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteHourly', {
+                "pickUpLatitude": "25.087609",
+                "pickUpLongitude": "55.193316",
+                "Numberofhours": "Dubai 5hrs City Tour"
+            }).then(function (response) {
+                setVehicle(response.data.data)
+            }).catch(function (error) {
+                console.log(error);
+            })
         }
         else {
-
-        }
-        axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-            "pickUpLatitude": "25.087609",
-            "pickUpLongitude": "55.193316",
-            "destinyLatitude": "25.198765",
-            "destinyLongitude": "55.279605",
-            "countryShortCode": "US"
-        })
-            .then(function (response) {
-                console.log(response.data.data);
-                setVehicle(response.data.data);
-
-            })
-            .catch(function (error) {
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
+                "pickUpLatitude": "25.087609",
+                "pickUpLongitude": "55.193316",
+                "destinyLatitude": "25.198765",
+                "destinyLongitude": "55.279605",
+                "countryShortCode": "US"
+            }).then(function (response) {
+                setVehicle(response.data.data)
+            }).catch(function (error) {
                 console.log(error);
-            });
-
+            })
+        }
 
     }, [rideType]);
 
