@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Grid, } from '@mui/material'
+import { Container, Box, Typography, Grid, MenuItem, FormControl, InputLabel, Select } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import PackageItem from './PackageItem'
 import destinations from './touritem.json';
@@ -7,9 +7,22 @@ import axios from 'axios';
 const Packages = () => {
 
     const [vehicle, setVehicle] = useState([]);
+    const [rideType, setRideType] = useState();
+
+    const handleChange = (event) => {
+        setRideType(event.target.value);
+
+    };
 
     useEffect(() => {
+        if (rideType === 1) {
 
+        } else if (rideType === 2) {
+
+        }
+        else {
+
+        }
         axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
             "pickUpLatitude": "25.087609",
             "pickUpLongitude": "55.193316",
@@ -19,24 +32,46 @@ const Packages = () => {
         })
             .then(function (response) {
                 console.log(response.data.data);
-              setVehicle(response.data.data);
-              
+                setVehicle(response.data.data);
+
             })
             .catch(function (error) {
                 console.log(error);
             });
 
 
-    }, []);
+    }, [rideType]);
 
 
 
     return (
+
+
+
         <Box container sx={{
             paddingY: '80px',
             backgroundColor: '#F8F8F8',
         }}>
             <Container>
+
+                <Box sx={{ maxWidth: 500 }}>
+                    <FormControl sx={{ m: 1, minWidth: 300 }}>
+                        <InputLabel id="demo-simple-select-helper-label">Ride Type</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            value={rideType}
+                            label="Ride Type"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={1}>Route</MenuItem>
+                            <MenuItem value={2}>Hourly</MenuItem>
+
+                        </Select>
+                        {/* <FormHelperText>With label + helper text</FormHelperText> */}
+                    </FormControl>
+                </Box>
+
                 <Box container sx={{
                     display: 'flex',
                     alignItems: 'center',
