@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 const PackageItem = ({ car }) => {
-
+console.log(car);
     let navigate = useNavigate();
 
     return (
         <Grid item xs={4} md={3}>
-            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/vehicle-details"); }}>
+            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/vehicle-details",{state:{car}}); }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

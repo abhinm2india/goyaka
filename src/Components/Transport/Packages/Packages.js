@@ -1,7 +1,7 @@
 import { Container, Box, Typography, Grid, MenuItem, FormControl, InputLabel, Select } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import PackageItem from './PackageItem'
-import destinations from './touritem.json';
+// import destinations from './touritem.json';
 import axios from 'axios';
 
 const Packages = () => {
