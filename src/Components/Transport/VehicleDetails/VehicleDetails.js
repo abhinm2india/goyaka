@@ -399,9 +399,11 @@ const VehicleDetails = (props) => {
                 error={errors.paymentMode}
               />
               <div>
-                <Controls.Button
+                <Controls.Button sx={{
+                  color:"#fff",
+                }}
                   type="submit"
-                  text="Submit" />
+                  text="Book Now" />
 
               </div>
 
