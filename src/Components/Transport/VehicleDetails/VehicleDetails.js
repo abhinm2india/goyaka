@@ -217,7 +217,7 @@ const VehicleDetails = (props) => {
                 '@media screen and (max-width:678px)': {
                   width: '100%',
                   height: 'auto',
-                  marginLeft:'0px',
+                  marginLeft: '0px',
                 },
               }}
             >
@@ -283,13 +283,13 @@ const VehicleDetails = (props) => {
 
           </Box>
 
-          <Box component='div' marginBottom={10}   sx={{
-               
-               
-                '@media screen and (max-width:678px)': {
-                 marginTop:'20px',
-                },
-              }}>
+          <Box component='div' marginBottom={10} sx={{
+
+
+            '@media screen and (max-width:678px)': {
+              marginTop: '20px',
+            },
+          }}>
             <Typography variant='body1' sx={
               {
                 textTransform: 'capitalize',
@@ -345,6 +345,12 @@ const VehicleDetails = (props) => {
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
+          sx={{
+            '@media screen and (max-width:678px)': {
+              marginLeft: '10px',
+              marginRight: '10px',
+            },
+          }}
         >
           <Box sx={style}>
             <Typography variant='h6'>
@@ -400,7 +406,7 @@ const VehicleDetails = (props) => {
               />
               <div>
                 <Controls.Button sx={{
-                  color:"#fff",
+                  color: "#fff",
                 }}
                   type="submit"
                   text="Book Now" />
