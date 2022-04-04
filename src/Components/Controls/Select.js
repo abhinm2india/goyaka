@@ -2,11 +2,12 @@ import React from 'react'
 import { FormControl, InputLabel, Select as MuiSelect, MenuItem, FormHelperText } from '@mui/material';
 const Select = (props) => {
 
-    const { name, label, value, onChange, options } = props;
+    const { name, label, value, onChange, error = null, options } = props;
 
 
     return (
-        <FormControl variant="outlined">
+        <FormControl variant="outlined"
+            {...(error && { error: true, helperText: error })}>
             <InputLabel>{label}</InputLabel>
             <MuiSelect
                 label={label}
@@ -16,11 +17,11 @@ const Select = (props) => {
                 <MenuItem value="">None</MenuItem>
                 {
                     options.map(
-                        item => (<MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)
+                        item => (<MenuItem key={item.id} value={item.title}>{item.title}</MenuItem>)
                     )
                 }
             </MuiSelect>
-
+            {error && <FormHelperText>{error}</FormHelperText>}
         </FormControl>
     )
 }

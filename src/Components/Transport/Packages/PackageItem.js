@@ -5,13 +5,13 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { useNavigate } from 'react-router-dom';
 
 
-const PackageItem = ({ car,ride }) => {
-console.log(ride);
+const PackageItem = ({ car,ride, rideType }) => {
+// console.log(ride);
     let navigate = useNavigate();
 
     return (
         <Grid item xs={4} md={3}>
-            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/vehicle-details",{state:{car,ride}}); }}>
+            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/vehicle-details",{state:{car,ride,rideType}}); }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

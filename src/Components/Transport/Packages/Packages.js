@@ -7,10 +7,19 @@ import axios from 'axios';
 const Packages = () => {
 
     const [vehicle, setVehicle] = useState([]);
-    const [rideType, setRideType] = useState();
+    const [rideType, setRideType] = useState(1);
+    const [bookingType, setBookingType] = useState('Route');
 
     const handleChange = (event) => {
-        setRideType(event.target.value);
+        if (event.target.value === 1) {
+            setBookingType('Route')
+            setRideType(1)
+          }
+          if (event.target.value === 2) {
+            setBookingType('Hourly')
+            setRideType(2)
+          }
+        // setRideType(event.target.value);
 
     };
 
@@ -115,7 +124,7 @@ const Packages = () => {
 
                     {vehicle.map((data) => (
 
-                        <PackageItem car={data} ride={rideType} />
+                        <PackageItem car={data} ride={bookingType} rideType={rideType}/>
 
                     ))}
                 </Grid>
