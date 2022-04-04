@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
 
@@ -86,11 +86,23 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" onClick={() => { navigate("/"); }}>{page}</Typography>
-                </MenuItem>
-              ))}
+              {/* {pages.map((page) => ( */}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/"); }}>Home</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/tour"); }}>Tour Packages</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/transport"); }}> Transport Booking</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/about-us"); }}> About Us</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/contact-us"); }}> Contact Us</Typography>
+              </MenuItem>
+              {/* ))} */}
             </Menu>
           </Box>
           <Typography onClick={() => { navigate("/"); }}
