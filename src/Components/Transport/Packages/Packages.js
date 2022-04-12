@@ -4,11 +4,11 @@ import PackageItem from './PackageItem'
 // import destinations from './touritem.json';
 import axios from 'axios';
 
-const Packages = ({data}) => {
+const Packages = ({searchData}) => {
 console.log("data from transport");
-console.log(data.loc[3]);
+console.log(searchData.loc[3]);
     const [vehicle, setVehicle] = useState([]);
-    const [rideType, setRideType] = useState(data.ridetype);
+    const [rideType, setRideType] = useState(searchData.ridetype);
     const [bookingType, setBookingType] = useState('Route');
 
     const handleChange = (event) => {
@@ -27,10 +27,10 @@ console.log(data.loc[3]);
     useEffect(() => {
         if (rideType === 1) {
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-                "pickUpLatitude": data.loc[0],
-                "pickUpLongitude": data.loc[1],
-                "destinyLatitude": data.loc[2],
-                "destinyLongitude": data.loc[3],
+                "pickUpLatitude": searchData.loc[0],
+                "pickUpLongitude": searchData.loc[1],
+                "destinyLatitude": searchData.loc[2],
+                "destinyLongitude": searchData.loc[3],
                 "countryShortCode": "AE"
             }).then(function (response) {
                 setVehicle(response.data.data);
