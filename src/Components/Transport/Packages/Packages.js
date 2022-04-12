@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Packages = ({searchData}) => {
 console.log("data from transport");
-console.log(searchData.loc[1]);
+console.log(searchData);
     const [vehicle, setVehicle] = useState([]);
     const [rideType, setRideType] = useState(searchData.ridetype);
     const [bookingType, setBookingType] = useState('Route');
