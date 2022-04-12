@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Packages = ({searchData}) => {
 console.log("data from transport");
-console.log(searchData.loc[3]);
+console.log(searchData.loc[1]);
     const [vehicle, setVehicle] = useState([]);
     const [rideType, setRideType] = useState(searchData.ridetype);
     const [bookingType, setBookingType] = useState('Route');
@@ -27,11 +27,11 @@ console.log(searchData.loc[3]);
     useEffect(() => {
         if (rideType === 1) {
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-                "pickUpLatitude": searchData.loc[0],
-                "pickUpLongitude": searchData.loc[1],
-                "destinyLatitude": searchData.loc[2],
-                "destinyLongitude": searchData.loc[3],
-                "countryShortCode": "AE"
+                "pickUpLatitude":searchData.loc[0],
+                "pickUpLongitude":searchData.loc[1],
+                "destinyLatitude":searchData.loc[2],
+                "destinyLongitude":searchData.loc[3],
+                "countryShortCode":"US"
             }).then(function (response) {
                 setVehicle(response.data.data);
             }).catch(function (error) {
@@ -52,10 +52,10 @@ console.log(searchData.loc[3]);
         else {
             setRideType(1);
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-                "pickUpLatitude": "25.087609",
-                "pickUpLongitude": "55.193316",
-                "destinyLatitude": "25.198765",
-                "destinyLongitude": "55.279605",
+                "pickUpLatitude":searchData.loc[0],
+                "pickUpLongitude":searchData.loc[1],
+                "destinyLatitude":searchData.loc[2],
+                "destinyLongitude":searchData.loc[3],
                 "countryShortCode": "US"
             }).then(function (response) {
                 setVehicle(response.data.data)

@@ -27,7 +27,7 @@ const Transport = (props) => {
         <>
             <NavBar />
             <TourBanner />
-            <Packages data={location.state}/>
+            <Packages searchData={location.state} />
             <Subscribe />
             <Footer />
         </>
