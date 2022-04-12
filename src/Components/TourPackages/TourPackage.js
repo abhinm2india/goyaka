@@ -5,7 +5,11 @@ import Subscribe from '../Subscribe/Subscribe'
 import TourBanner from './Banner/TourBanner'
 import Packages from './Packages/Packages'
 
-const TourPackage = () => {
+
+const TourPackage = (props) => {
+
+   
+
     return (
         <>
             <NavBar />

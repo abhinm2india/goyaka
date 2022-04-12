@@ -5,8 +5,7 @@ import Subscribe from '../Subscribe/Subscribe'
 import TourBanner from './Banner/TransportBanner'
 import Packages from './Packages/Packages'
 import axios from 'axios'
-
-
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -20,15 +19,15 @@ import axios from 'axios'
 
 
 
-const Transport = () => {
+const Transport = (props) => {
 
-
+    const location = useLocation();
 
     return (
         <>
             <NavBar />
             <TourBanner />
-            <Packages />
+            <Packages data={location.state}/>
             <Subscribe />
             <Footer />
         </>
