@@ -132,7 +132,7 @@ const Choices = () => {
                 <Box sx={{
                     height: '200px',
                     width: '100%',
-                    backgroundColor: '#E9FFE1',
+                    backgroundColor: 'rgb(166 0 0 / 11%)',
                     border: 'none',
                     borderRadius: '10px',
                     marginTop: '-100px',
