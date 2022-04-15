@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Search = (props) => {
 
-    
+
 
 
     const API_KEY = process.env.REACT_APP_API_KEY;
@@ -46,10 +46,10 @@ const Search = (props) => {
     const [pickup, setPickup] = useState();
     const [drop, setDrop] = useState();
 
-    const [pickupLat,setPickupLat]=useState();
-    const [pickupLng,setPickupLng]=useState();
-    const [dropLat,setDropLat]=useState();
-    const [dropLng,setDropLng]=useState();
+    const [pickupLat, setPickupLat] = useState();
+    const [pickupLng, setPickupLng] = useState();
+    const [dropLat, setDropLat] = useState();
+    const [dropLng, setDropLng] = useState();
 
     const [pickautocomplete, setPickAutocomplete] = useState(null);
     const [dropautocomplete, setDropAutocomplete] = useState(null);
@@ -68,9 +68,15 @@ const Search = (props) => {
     const getPickupCordinates = () => {
         const pickplace = pickautocomplete.getPlace();
         // console.log(pickplace.geometry.location.lng());
-        // console.log(typeof(place));
-       setPickupLat(pickplace.geometry.location.lat())
-       setPickupLng(pickplace.geometry.location.lng())
+        // console.log(pickplace.geometry.location.lat().lat.toFixed(6));
+        const ptl = pickplace.geometry.location.lat()
+        const ptls = ptl.toFixed(6)
+        setPickupLat(ptls)
+
+        const ptlo = pickplace.geometry.location.lng()
+        const ptlos = ptlo.toFixed(6)
+        setPickupLng(ptlos)
+
         setPickup(pickplace)
     }
 
@@ -78,21 +84,28 @@ const Search = (props) => {
         const dropplace = dropautocomplete.getPlace();
         // console.log(dropplace.geometry.location.lng());
         // console.log(typeof(place));
-        setDropLat(dropplace.geometry.location.lat())
-        setDropLng(dropplace.geometry.location.lng())
+
+        const dtl = dropplace.geometry.location.lat()
+        const dtls = dtl.toFixed(6)
+        setDropLat(dtls)
+
+        const dtlo = dropplace.geometry.location.lng()
+        const dtlos = dtlo.toFixed(6)
+        setDropLng(dtlos)
+        
         setDrop(dropplace)
     }
     // console.log(pickup);
     // console.log(drop)
     // onClick={() => { navigate("/vehicle-details",{state:{car,ride,rideType}}); }}
-    const loc =[pickupLat,pickupLng,dropLat,dropLng];
+    const loc = [pickupLat, pickupLng, dropLat, dropLng];
     let navigate = useNavigate();
-    const toTransport=(event)=>{
+    const toTransport = (event) => {
         // event.preventDefault();
-        navigate('/transport',{state:{loc,ridedate,ridetime,ridetype:value}});
-          }
+        navigate('/transport', { state: { loc, ridedate, ridetime, ridetype: value } });
+    }
 
-   
+
     if (!isLoaded) {
         return <Skeleton />
     }
@@ -124,7 +137,7 @@ const Search = (props) => {
                         </TabList>
                     </Box>
                     <TabPanel value="1">
-                      
+
                         <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             <Grid item xs={3}>
                                 <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
@@ -193,7 +206,7 @@ const Search = (props) => {
                             {/* onClick={() => { navigate("/transport", { state: { pickup, drop, ridedate, ridetime } }); }} */}
                             <Grid item xs={2}>
                                 <Button
-                                   onClick={toTransport}
+                                    onClick={toTransport}
                                     variant='contained'
                                     sx={{
                                         color: '#fff',

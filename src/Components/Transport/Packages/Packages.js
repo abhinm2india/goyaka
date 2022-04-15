@@ -33,6 +33,7 @@ console.log(searchData);
                 "destinyLongitude":searchData.loc[3],
                 "countryShortCode":"US"
             }).then(function (response) {
+                console.log(response);
                 setVehicle(response.data.data);
             }).catch(function (error) {
                 console.log(error);
@@ -56,8 +57,9 @@ console.log(searchData);
                 "pickUpLongitude":searchData.loc[1],
                 "destinyLatitude":searchData.loc[2],
                 "destinyLongitude":searchData.loc[3],
-                "countryShortCode": "US"
+                "countryShortCode": "AE"
             }).then(function (response) {
+                console.log(response.data);
                 setVehicle(response.data.data)
             }).catch(function (error) {
                 console.log(error);
