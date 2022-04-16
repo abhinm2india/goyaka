@@ -7,6 +7,7 @@ const Input = (props) => {
 
     return (
         <TextField
+        size='small'
             variant='outlined'
             label={label}
             value={value}

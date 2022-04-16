@@ -22,7 +22,7 @@ import { useLocation } from 'react-router-dom'
 const Transport = (props) => {
 
     const location = useLocation();
-
+console.log(location.state)
     return (
         <>
             <NavBar />

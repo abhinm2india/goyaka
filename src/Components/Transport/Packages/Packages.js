@@ -9,23 +9,24 @@ console.log("data from transport");
 console.log(searchData);
     const [vehicle, setVehicle] = useState([]);
     const [rideType, setRideType] = useState(searchData.ridetype);
-    const [bookingType, setBookingType] = useState('Route');
+    const [bookingType, setBookingType] = useState('');
 
-    const handleChange = (event) => {
-        if (event.target.value === 1) {
-            setBookingType('Route')
-            setRideType(1)
-          }
-          if (event.target.value === 2) {
-            setBookingType('Hourly')
-            setRideType(2)
-          }
-        // setRideType(event.target.value);
+    // const handleChange = (event) => {
+    //     if (event.target.value === 1) {
+    //         setBookingType('Route')
+    //         setRideType(1)
+    //       }
+    //       if (event.target.value === 2) {
+    //         setBookingType('Hourly')
+    //         setRideType(2)
+    //       }
+    //     // setRideType(event.target.value);
 
-    };
+    // };
 
     useEffect(() => {
         if (rideType === 1) {
+            setBookingType('Route')
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
                 "pickUpLatitude":searchData.loc[0],
                 "pickUpLongitude":searchData.loc[1],
@@ -40,6 +41,7 @@ console.log(searchData);
             })
 
         } else if (rideType === 2) {
+            setBookingType('Hourly')
             axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteHourly', {
                 "pickUpLatitude": "25.087609",
                 "pickUpLongitude": "55.193316",
@@ -80,7 +82,7 @@ console.log(searchData);
         }}>
             <Container>
 
-                <Box sx={{ maxWidth: 500 }}>
+                {/* <Box sx={{ maxWidth: 500 }}>
                     <FormControl sx={{ m: 1, minWidth: 300 }}>
                         <InputLabel id="demo-simple-select-helper-label">Ride Type</InputLabel>
                         <Select
@@ -94,9 +96,9 @@ console.log(searchData);
                             <MenuItem value={2}>Hourly</MenuItem>
 
                         </Select>
-                        {/* <FormHelperText>With label + helper text</FormHelperText> */}
+                     
                     </FormControl>
-                </Box>
+                </Box> */}
 
                 <Box container sx={{
                     display: 'flex',
@@ -122,12 +124,12 @@ console.log(searchData);
                 </Box>
 
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
-                    paddingTop: '40px',
+                    
                 }}>
 
                     {vehicle.map((data) => (
 
-                        <PackageItem car={data} ride={bookingType} rideType={rideType}/>
+                        <PackageItem car={data} ride={bookingType} rideType={rideType} searchdata={searchData}/>
 
                     ))}
                 </Grid>
