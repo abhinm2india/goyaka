@@ -64,6 +64,9 @@ const NavBar = () => {
               width: '135px',
               maxHeight: { xs: 233, md: 167 },
               maxWidth: { xs: 350, md: 250 },
+              mr: 2, 
+              display: { xs: 'none', md: 'flex' },
+              cursor: 'pointer',
             }}
             alt="Logo"
             src="./images/goyaka.png"
@@ -133,6 +136,8 @@ const NavBar = () => {
               width: '135px',
               maxHeight: { xs: 233, md: 167 },
               maxWidth: { xs: 350, md: 250 },
+              flexGrow: 1, 
+              display: { xs: 'flex', md: 'none' }
             }}
             alt="Logo"
             src="./images/goyaka.png"
