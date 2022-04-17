@@ -44,7 +44,7 @@ const NavBar = () => {
     <AppBar color='cusWhite' position="static" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Typography
+          {/* <Typography
 
             variant="h6"
 
@@ -55,7 +55,18 @@ const NavBar = () => {
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontWeight: 'bold', cursor: 'pointer' }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
+
+          <Box component="img"
+          sx={{
+            height: 233,
+          width: 350,
+          maxHeight: { xs: 233, md: 167 },
+          maxWidth: { xs: 350, md: 250 },
+          }}
+          alt="Logo"
+          src="./images/goyaka.png"
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
