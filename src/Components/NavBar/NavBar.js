@@ -93,9 +93,9 @@ const NavBar = () => {
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center" onClick={() => { navigate("/tour"); }}>Tour Packages</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              {/* <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center" onClick={() => { navigate("/transport"); }}> Transport Booking</Typography>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center" onClick={() => { navigate("/about-us"); }}> About Us</Typography>
               </MenuItem>
@@ -136,16 +136,16 @@ const NavBar = () => {
               {/* {page} */}
               Tour Packages
             </Button>
-            <Button
-              // key={page}
+            {/* <Button
+             
               onClick={() => { navigate("/transport"); }}
               color='cusBlack'
 
               sx={{ mr: 4, display: 'block', textTransform: 'capitalize', fontWeight: '500', fontSize: '16px' }}
             >
-              {/* {page} */}
+            
               Transport Booking
-            </Button>
+            </Button> */}
             <Button
               // key={page}
               onClick={() => { navigate("/about-us"); }}
