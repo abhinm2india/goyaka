@@ -58,14 +58,15 @@ const NavBar = () => {
           </Typography> */}
 
           <Box component="img"
-          sx={{
-            height: '50px',
-          width: '135px',
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
-          }}
-          alt="Logo"
-          src="./images/goyaka.png"
+            onClick={() => { navigate("/"); }}
+            sx={{
+              height: '50px',
+              width: '135px',
+              maxHeight: { xs: 233, md: 167 },
+              maxWidth: { xs: 350, md: 250 },
+            }}
+            alt="Logo"
+            src="./images/goyaka.png"
           />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -125,6 +126,17 @@ const NavBar = () => {
           >
             LOGO
           </Typography> */}
+          <Box component="img"
+            onClick={() => { navigate("/"); }}
+            sx={{
+              height: '50px',
+              width: '135px',
+              maxHeight: { xs: 233, md: 167 },
+              maxWidth: { xs: 350, md: 250 },
+            }}
+            alt="Logo"
+            src="./images/goyaka.png"
+          />
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center' }}>
             {/* {pages.map((page) => ( */}
             <Button
