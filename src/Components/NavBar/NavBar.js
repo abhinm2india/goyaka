@@ -59,8 +59,8 @@ const NavBar = () => {
 
           <Box component="img"
           sx={{
-            height: 233,
-          width: 350,
+            height: '50px',
+          width: '135px',
           maxHeight: { xs: 233, md: 167 },
           maxWidth: { xs: 350, md: 250 },
           }}
@@ -116,7 +116,7 @@ const NavBar = () => {
               {/* ))} */}
             </Menu>
           </Box>
-          <Typography onClick={() => { navigate("/"); }}
+          {/* <Typography onClick={() => { navigate("/"); }}
             variant="h6"
             noWrap
             component="div"
@@ -124,7 +124,7 @@ const NavBar = () => {
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, fontWeight: 'bold' }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center' }}>
             {/* {pages.map((page) => ( */}
             <Button
