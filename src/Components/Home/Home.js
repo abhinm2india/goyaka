@@ -30,6 +30,11 @@ const style = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    '@media screen and (max-width: 678px)': {
+        width:'70vw',
+        height:'50vh',
+        objcetFit:'cover',
+    },
 };
 
 
