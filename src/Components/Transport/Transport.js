@@ -26,7 +26,7 @@ console.log(location.state)
     return (
         <>
             <NavBar />
-            <TourBanner />
+            {/* <TourBanner /> */}
             <Packages searchData={location.state} />
             <Subscribe />
             <Footer />
