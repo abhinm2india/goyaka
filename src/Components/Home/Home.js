@@ -1,5 +1,5 @@
 import { Box, Modal, Typography, Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../Footer/Footer'
 import NavBar from '../NavBar/NavBar'
 import Subscribe from '../Subscribe/Subscribe'
@@ -21,8 +21,8 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    border: '0px solid #000',
-    borderRadius:'5px',
+    border: '0px solid',
+    borderRadius: '5px',
     boxShadow: 24,
     p: 4,
     height: '400px',
@@ -39,7 +39,13 @@ function Home() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    useEffect(() => {
 
+        setTimeout(() => {
+            setOpen(true);
+        }, 3000)
+
+    }, [])
 
 
     return (
