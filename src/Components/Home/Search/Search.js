@@ -126,7 +126,11 @@ const Search = (props) => {
             display: 'flex',
             justifyContent: 'center',
             paddingLeft: '60px !important',
-            paddingRight: '60px !important'
+            paddingRight: '60px !important',
+            '@media screen and (max-width: 678px)': {
+                paddingLeft: '22px !important',
+                paddingRight: '22px !important',
+              },
         }}>
 
             <Box sx={{
@@ -147,11 +151,11 @@ const Search = (props) => {
                     <TabPanel value="1">
 
                         <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            <Grid item xs={3}>
+                            <Grid item md ={3} xs={12}>
                                 <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
                                     <TextField size='small'
                                         label="Pick me at"
-
+fullWidth
                                         // inputRef={pickRef}
                                         id="picktext"
                                         // defaultValue="Small"
@@ -164,7 +168,7 @@ const Search = (props) => {
 
 
                             </Grid>
-                            <Grid item xs={3}>
+                            <Grid item item md ={3} xs={12}>
                                 <Autocomplete onLoad={dropOnLoad} onPlaceChanged={getDropCordinates}>
                                     <TextField size='small'
                                         label="Drop me at"
@@ -182,7 +186,7 @@ const Search = (props) => {
 
 
                             </Grid>
-                            <Grid item xs={2}>
+                            <Grid item md ={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         views={['day']}
@@ -197,7 +201,7 @@ const Search = (props) => {
 
                                 </LocalizationProvider>
                             </Grid>
-                            <Grid item xs={2}>
+                            <Grid item md ={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <TimePicker
                                         label="Travel Time"
@@ -212,7 +216,7 @@ const Search = (props) => {
                                 </LocalizationProvider>
                             </Grid>
                             {/* onClick={() => { navigate("/transport", { state: { pickup, drop, ridedate, ridetime } }); }} */}
-                            <Grid item xs={2}>
+                            <Grid item md ={2} xs={12}>
                                 <Button
                                     onClick={toTransport}
                                     variant='contained'
@@ -228,7 +232,7 @@ const Search = (props) => {
                     </TabPanel>
                     <TabPanel value="2">
                         <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            <Grid item xs={3}>
+                            <Grid item md ={3} xs={12}>
                                 <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
                                     <TextField size='small'
                                         label="Pick me at"
@@ -243,7 +247,7 @@ const Search = (props) => {
                                     />
                                 </Autocomplete>
                             </Grid>
-                            <Grid item xs={3}>
+                            <Grid item md ={3} xs={12}>
                                 <FormControl fullWidth size='small'>
                                     <InputLabel id="demo-simple-select-label" >Package</InputLabel>
                                     <Select
@@ -262,7 +266,7 @@ const Search = (props) => {
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid item xs={2}>
+                            <Grid item md ={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         views={['day']}
@@ -277,7 +281,7 @@ const Search = (props) => {
 
                                 </LocalizationProvider>
                             </Grid>
-                            <Grid item xs={2}>
+                            <Grid item md ={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <TimePicker
                                         label="Travel Time"
@@ -292,7 +296,7 @@ const Search = (props) => {
                                 </LocalizationProvider>
                             </Grid>
 
-                            <Grid item xs={2} >
+                            <Grid item md ={2} xs={12} >
                                 <Button
                                     onClick={toTransport}
                                     variant='contained'

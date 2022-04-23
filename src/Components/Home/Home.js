@@ -20,7 +20,7 @@ function Home() {
             <NavBar />
             <Hero />
             <Box container sx={{
-                marginTop: '-60px',
+                marginTop: '-120px',
             }}>
                 <Search />
             </Box>

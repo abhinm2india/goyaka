@@ -41,7 +41,7 @@ const Hero = () => {
                         <Typography variant="body1" color="white" opacity={1} pr={6} mr={6}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
                         </Typography>
-                        <Stack direction="row" spacing={1} mt={3}>
+                        {/* <Stack direction="row" spacing={1} mt={3}>
                             <Button
                                 variant='contained'
                                 size='large'
@@ -52,7 +52,7 @@ const Hero = () => {
                                 }}>
                                 More Packages
                             </Button>
-                        </Stack>
+                        </Stack> */}
                     </Grid>
                 </Container>
             </Box>
