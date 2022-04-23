@@ -24,10 +24,12 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-    height:'400px',
-    backgroundImage:'url(./images/goyakaad.jpeg)',
-    backgroundType:'cover',
-  };
+    height: '400px',
+    backgroundImage: 'url(./images/goyakaad.jpeg)',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+};
 
 
 function Home() {
@@ -70,7 +72,7 @@ function Home() {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
-                       
+
                     </Box>
                 </Modal>
             </div>
