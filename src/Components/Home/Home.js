@@ -31,7 +31,7 @@ const style = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     '@media screen and (max-width: 678px)': {
-        width:'70vw',
+        width:'90vw',
         height:'50vh',
         objcetFit:'cover',
     },
