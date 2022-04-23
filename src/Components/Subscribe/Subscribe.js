@@ -9,7 +9,7 @@ const Subscribe = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#8FC27D',
+                backgroundColor: 'primary.main',
                 height: '50vh',
                 paddingY: '50px',
                 borderRadius: '20px',

@@ -9,6 +9,7 @@ const Colors = {
     gray: '#7C7C7C',
     white: '#FFFFFF',
     yellow: '#F8B84E',
+    light:'rgb(166 0 0 / 11%)',
 };
 
 const theme = createTheme({
@@ -18,6 +19,7 @@ const theme = createTheme({
             main: Colors.primary,
             black: Colors.black,
             white: Colors.white,
+            light:Colors.light,
 
         },
         secondary: {

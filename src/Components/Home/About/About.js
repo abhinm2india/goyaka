@@ -124,7 +124,7 @@ const About = () => {
                             <Box sx={{
                                 height: '150px',
                                 width: '100%',
-                                backgroundColor: '#E9FFE1',
+                                backgroundColor: 'primary.light',
                                 border: 'none',
                                 borderRadius: '10px',
                                 marginTop: '-100px',
