@@ -136,20 +136,20 @@ const Footer = () => {
                             <List>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Address
+                                    Deira, Dubai
                                     </ListItemText>
 
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Phone Number
+                                       +971 50 273 6276
                                     </ListItemText>
 
                                 </ListItem>
 
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Email
+                                    webbooking@goyakatravels.com
                                     </ListItemText>
 
                                 </ListItem>
