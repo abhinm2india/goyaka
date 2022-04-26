@@ -2,16 +2,19 @@ import { Card, CardActionArea, CardActions, CardContent, IconButton, CardMedia, 
 import React from 'react'
 
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
+import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import { useNavigate } from 'react-router-dom';
 
 
 const PackageItem = ({ tour }) => {
 
+    // console.log("tour")
+    // console.log(tour.id)
     let navigate = useNavigate();
-
+    const dataId = tour.id;
     return (
         <Grid item xs={4} md={3}>
-            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/tour-details"); }}>
+            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/tour-details", { state: {dataId} }); }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -29,14 +32,16 @@ const PackageItem = ({ tour }) => {
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites" disabled >
+                        {/* <IconButton aria-label="add to favorites" disabled >
                             <FmdGoodOutlinedIcon color="primary" fontSize='small' />
                             <Typography color="primary" variant='caption'>{tour.location}</Typography>
-                        </IconButton>
+                        </IconButton> */}
 
                         <IconButton aria-label="add to favorites" disabled>
-                            <FmdGoodOutlinedIcon color="primary" fontSize='small' />
-                            <Typography color="primary" variant='caption'>${tour.price}/Package</Typography>
+                            <PaidOutlinedIcon color="primary" fontSize='small' />
+                            <Typography color="primary" variant='caption' sx={{
+                                marginLeft: "7px"
+                            }}>  {tour.price}/Package</Typography>
                         </IconButton>
 
 

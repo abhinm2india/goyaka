@@ -5,7 +5,7 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { useNavigate } from 'react-router-dom';
 
 
-const PackageItem = ({ car, ride, rideType, searchdata }) => {
+const PackageItem = ({ car, ride, rideType, searchdata}) => {
     console.log('from package item')
     console.log(searchdata);
 
@@ -18,14 +18,14 @@ const PackageItem = ({ car, ride, rideType, searchdata }) => {
     const dlat = searchdata.loc[2];
     const dlog = searchdata.loc[3];
 
-    const packageName=searchdata.ridepackage;
+    const packageName = searchdata.ridepackage;
 
     let navigate = useNavigate();
 
     return (
         <Grid item xs={4} md={3}>
             <Card sx={{ maxWidth: 345 }}
-                onClick={() => { navigate("/booking", { state: { car, ride, rideType, pickName, dropName,packageName, bdate, plat, plog, dlat, dlog, } }); }}>
+                onClick={() => { navigate("/booking", { state: { car, ride, rideType, pickName, dropName, packageName, bdate, plat, plog, dlat, dlog, } }); }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

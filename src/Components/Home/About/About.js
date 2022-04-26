@@ -28,13 +28,12 @@ const About = () => {
 
                                     }}
                                 >
-                                    With Our Experience
-                                    We Will Serve You
+                                    We Promise a Journey That You Will Cherish Forever!
                                 </Typography>
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                                    At Goyaka, you meet a team of wanderlusts dedicated to guide you through the beautiful landscapes in the UAE. Dubai, the city of wonders, welcomes you wholeheartedly to explore the miracles it offers.
                                 </Typography>
                             </Box>
                             <Box container sx={{
@@ -87,10 +86,10 @@ const About = () => {
                                 marginY: '30px',
                             }}>
                                 <Button variant='contained'
-                                onClick={()=>{navigate("/about-us");}}
-                                sx={{
-                                    color: 'primary.white',
-                                }}>Read More</Button>
+                                onClick={() => { navigate("/about-us"); }}
+                                    sx={{
+                                        color: 'primary.white',
+                                    }}>Read More</Button>
                             </Box>
                         </Box>
                     </Grid>

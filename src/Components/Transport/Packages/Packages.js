@@ -1,12 +1,16 @@
-import { Container, Box, Typography, Grid, MenuItem, FormControl, InputLabel, Select } from '@mui/material'
+import { Container, Box, Typography, Grid, MenuItem, FormControl, InputLabel, Select, Skeleton } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import PackageItem from './PackageItem'
 // import destinations from './touritem.json';
 import axios from 'axios';
+import SkeltonLoading from './SkeltonLoading';
 
-const Packages = ({searchData}) => {
-console.log("data from transport");
-console.log(searchData);
+const Packages = ({ searchData }) => {
+
+    const [isLoading, SetIsLoading] = useState(false);
+
+    console.log("data from transport");
+    console.log(searchData);
     const [vehicle, setVehicle] = useState([]);
     const [rideType, setRideType] = useState(searchData.ridetype);
     const [bookingType, setBookingType] = useState('');
@@ -27,42 +31,45 @@ console.log(searchData);
     useEffect(() => {
         if (rideType === 1) {
             setBookingType('Route')
-            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-                "pickUpLatitude":searchData.loc[0],
-                "pickUpLongitude":searchData.loc[1],
-                "destinyLatitude":searchData.loc[2],
-                "destinyLongitude":searchData.loc[3],
-                "countryShortCode":"US"
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteGK', {
+                "pickUpLatitude": searchData.loc[0],
+                "pickUpLongitude": searchData.loc[1],
+                "destinyLatitude": searchData.loc[2],
+                "destinyLongitude": searchData.loc[3],
+                "countryShortCode": "AE"
             }).then(function (response) {
                 console.log(response);
                 setVehicle(response.data.data);
+                SetIsLoading(true)
             }).catch(function (error) {
                 console.log(error);
             })
 
         } else if (rideType === 2) {
             setBookingType('Hourly')
-            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteHourly', {
-                "pickUpLatitude": "25.087609",
-                "pickUpLongitude": "55.193316",
-                "Numberofhours": "Dubai 5hrs City Tour"
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteHourlyGK', {
+                "pickUpLatitude": searchData.loc[0],
+                "pickUpLongitude": searchData.loc[1],
+                "Numberofhours": searchData.ridepackage
             }).then(function (response) {
                 setVehicle(response.data.data)
+                SetIsLoading(true)
             }).catch(function (error) {
                 console.log(error);
             })
         }
         else {
             setRideType(1);
-            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSite', {
-                "pickUpLatitude":searchData.loc[0],
-                "pickUpLongitude":searchData.loc[1],
-                "destinyLatitude":searchData.loc[2],
-                "destinyLongitude":searchData.loc[3],
+            axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/rideTypeforSiteGK', {
+                "pickUpLatitude": searchData.loc[0],
+                "pickUpLongitude": searchData.loc[1],
+                "destinyLatitude": searchData.loc[2],
+                "destinyLongitude": searchData.loc[3],
                 "countryShortCode": "AE"
             }).then(function (response) {
                 console.log(response.data);
                 setVehicle(response.data.data)
+                SetIsLoading(true)
             }).catch(function (error) {
                 console.log(error);
             })
@@ -124,14 +131,21 @@ console.log(searchData);
                 </Box>
 
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
-                    
+
                 }}>
+                    {isLoading ? (
 
-                    {vehicle.map((data) => (
+                        vehicle.map((data) => (
 
-                        <PackageItem car={data} ride={bookingType} rideType={rideType} searchdata={searchData}/>
+                            <PackageItem car={data} ride={bookingType} rideType={rideType} searchdata={searchData} />
 
-                    ))}
+                        ))
+
+
+                    ) :
+                        <SkeltonLoading/>
+                    }
+
                 </Grid>
 
             </Container>

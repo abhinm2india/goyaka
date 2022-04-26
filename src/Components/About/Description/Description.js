@@ -7,14 +7,10 @@ const Description = () => {
                 marginBottom:'80px',
             }}>
                 <Typography variant='h4' align='center' fontWeight='bold' mb={2}>
-                    Lorem ipsum dolor sit amet
+                We Promise a Journey That You Will Cherish Forever!
                 </Typography>
                 <Typography variant='body2' align='center' mb={2}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
-
+                At Goyaka, you meet a team of wanderlusts dedicated to guide you through the beautiful landscapes in the UAE. Dubai, the city of wonders, welcomes you wholeheartedly to explore the miracles it offers. You need the right travel partner to explore every nook and corner of the country. We are here to offer you a hassle-free travel experience in the UAE.
                 </Typography>
             </Box>
 
@@ -42,8 +38,7 @@ const Description = () => {
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                                Goyaka extends its services in main three areas, to say, Flight Bookings, Hotel Booking, Chauffeur Service. You get an option to choose from our specially tailored tour packages or individual services based on your requirements. With us, you will find an amazing range of luxury vehicles suitable for business travels, family tours, party buses and so on. Goyaka makes sure to tailor each service to meet your specific needs. Would you like to talk to us? Do not wait, call us or book a service via our website to enjoy a luxurious service.
                                 </Typography>
                             </Box>
                             <Box container sx={{
@@ -125,7 +120,7 @@ const Description = () => {
                             <Box sx={{
                                 height: '150px',
                                 width: '100%',
-                                backgroundColor: '#E9FFE1',
+                                backgroundColor: 'primary.light',
                                 border: 'none',
                                 borderRadius: '10px',
                                 marginTop: '-100px',

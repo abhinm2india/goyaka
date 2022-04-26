@@ -15,7 +15,7 @@ const Resort = () => {
                         }}>
                             <Box>
                                 <Typography variant='h6' color='primary' component='h6'>
-                                    RESORTS
+                                  TRANSPORT BOOKING
                                 </Typography>
                             </Box>
                             <Box>
@@ -33,7 +33,7 @@ const Resort = () => {
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                                Goyaka’s widest range of vehicles cater to the everyday business travel requirements and fun rides alike. Our executive cars are driven by qualified, vaccinated chauffeurs, which makes us promise you a safe on-demand rides within the country. Airport transfer services operate from Dubai, Abu Dhabi, Sharjah and private jet centers in the UAE. If you plan to travel to the UAE, book with us a complete stay package at best rates.
                                 </Typography>
                             </Box>
                             <Box container sx={{
@@ -43,7 +43,7 @@ const Resort = () => {
                                 marginTop: '30px',
                             }}>
 
-                                <List>
+                                {/* <List>
                                     <ListItem disablePadding>
 
                                         <ListItemIcon>
@@ -84,16 +84,16 @@ const Resort = () => {
                                         <ListItemText primary="Beach Activities" />
 
                                     </ListItem>
-                                </List>
+                                </List> */}
 
                             </Box>
-                            <Box container sx={{
+                            {/* <Box container sx={{
                                 marginY: '30px',
                             }}>
                                 <Button variant='contained' sx={{
                                     color: 'primary.white',
                                 }}>Know More</Button>
-                            </Box>
+                            </Box> */}
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
@@ -108,7 +108,7 @@ const Resort = () => {
                             <Paper sx={{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                backgroundImage: 'url(./images/resort.jpg),radial-gradient(circle, red, yellow, green)',
+                                backgroundImage: 'url(./images/car_002.jpg),radial-gradient(circle, red, yellow, green)',
                                 height: '400px',
                                 width: '90%',
 

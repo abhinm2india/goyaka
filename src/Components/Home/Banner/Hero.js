@@ -35,11 +35,10 @@ const Hero = () => {
                             mb={3}
                             fontWeight='bold'
                         >
-                            Enjoy Your
-                            Dream Vacation
+                            Life is all about adventures!
                         </Typography>
-                        <Typography variant="body1" color="white" opacity={1} pr={6} mr={6}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                        <Typography variant="h6" color="white" opacity={1} pr={6} mr={6}>
+                        Book your dream ride here
                         </Typography>
                         {/* <Stack direction="row" spacing={1} mt={3}>
                             <Button

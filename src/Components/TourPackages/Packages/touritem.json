@@ -1,269 +1,108 @@
 [
     {
         "id": 1,
-        "name": "Immerse into the Falls",
-        "duration": 5,
+        "name": "City Tour",
         "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_001.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-
+        "price": "AED: 99 (Shared Bus)",
+        "image": "./images/dubai/goyaka_dubai_tour_28.jpg",
+        "shortDescription":"",
+        "longDescription": [
+            "Port Rashid",
+            "Dry Docks",
+            "Jumeriah Open Beach",
+            "Burj Al Arab (Photo stop)",
+            "Burj Khalifa (Photo stop)",
+            "Jumeriah Palm Island",
+            "Atlantis Hotel",
+            "Dubai Marina",
+            "Sheik Palace",
+            "Bur Dubai Creek"
+        ],
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_20.jpg",
+            "./images/dubai/goyaka_dubai_tour_21.jpg",
+            "./images/dubai/goyaka_dubai_tour_22.jpg",
+            "./images/dubai/goyaka_dubai_tour_23.jpg",
+            "./images/dubai/goyaka_dubai_tour_24.jpg",
+            "./images/dubai/goyaka_dubai_tour_25.jpg",
+            "./images/dubai/goyaka_dubai_tour_26.jpg",
+            "./images/dubai/goyaka_dubai_tour_27.jpg"
+        ]
     },
     {
         "id": 2,
-        "name": "Helicopter Over the Falls",
-        "duration": 8,
+        "name": "Dolphinarium",
         "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_002.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
+        "price": "AED: 100",
+        "image": "./images/dubai/goyaka_dubai_tour_14.jpg",
+        "shortDescription":"",
+        "longDescription": "",
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_15.jpg",
+            "./images/dubai/goyaka_dubai_tour_16.jpg",
+            "./images/dubai/goyaka_dubai_tour_17.jpg",
+            "./images/dubai/goyaka_dubai_tour_18.jpg",
+            "./images/dubai/goyaka_dubai_tour_19.jpg",
+            "./images/dubai/goyaka_dubai_tour_20.jpg"
+        ]
     },
     {
         "id": 3,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_003.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
+        "name": "Desert Safari",
+        "rating": 3.5,
+        "price": "AED: 135",
+        "image": "./images/dubai/goyaka_dubai_tour_13.jpg",
+        "shortDescription":"",
+        "longDescription": "",
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_10.jpg",
+            "./images/dubai/goyaka_dubai_tour_11.jpg",
+            "./images/dubai/goyaka_dubai_tour_12.jpg",
+            "./images/dubai/goyaka_dubai_tour_13.jpg"
+        ]
     },
     {
         "id": 4,
-        "name": "Immerse into the Falls",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_004.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 4,
-        "name": "All Around the World",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_005.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
+        "name": "Burj Khalifa, Under Water Zoo, Dubai Aquarium",
+        "rating": 3.5,
+        "price": "AED: 250",
+        "image": "./images/dubai/goyaka_dubai_tour_08.jpg",
+        "shortDescription":"",
+        "longDescription": "",
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_08.jpg",
+            "./images/dubai/goyaka_dubai_tour_09.jpg",
+            "./images/dubai/goyaka_dubai_tour_26.jpg",
+            "./images/dubai/goyaka_dubai_tour_27.jpg",
+            "./images/dubai/goyaka_dubai_tour_28.jpg"
+        ]
     },
     {
         "id": 5,
-        "name": "View the Casinos",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_006.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
+        "name": "Dubai Museum",
+        "rating": 3.5,
+        "price": "AED: 145",
+        "image": "./images/dubai/goyaka_dubai_tour_04.jpg",
+        "shortDescription":"",
+        "longDescription": "",
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_04.jpg",
+            "./images/dubai/goyaka_dubai_tour_05.jpg",
+            "./images/dubai/goyaka_dubai_tour_06.jpg",
+            "./images/dubai/goyaka_dubai_tour_03.jpg"
+        ]
     },
     {
         "id": 6,
-        "name": "Show me the Magic",
-        "duration": 8,
+        "name": "Dubai Frame",
         "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_007.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 7,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_008.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 1,
-        "name": "Immerse into the Falls",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_001.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-
-    },
-    {
-        "id": 2,
-        "name": "Helicopter Over the Falls",
-        "duration": 8,
-        "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_002.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 3,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_003.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 4,
-        "name": "Immerse into the Falls",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_004.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 4,
-        "name": "All Around the World",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_005.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 5,
-        "name": "View the Casinos",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_006.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 6,
-        "name": "Show me the Magic",
-        "duration": 8,
-        "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_007.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 7,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_008.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 1,
-        "name": "Immerse into the Falls",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_001.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-
-    },
-    {
-        "id": 2,
-        "name": "Helicopter Over the Falls",
-        "duration": 8,
-        "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_002.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 3,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_003.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 4,
-        "name": "Immerse into the Falls",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_004.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 4,
-        "name": "All Around the World",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_005.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 5,
-        "name": "View the Casinos",
-        "duration": 5,
-        "rating": 4.5,
-        "numberOfReviews": 462,
-        "price": 465,
-        "image": "./images/tour_006.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 6,
-        "name": "Show me the Magic",
-        "duration": 8,
-        "rating": 3.5,
-        "numberOfReviews": 641,
-        "price": 385,
-        "image": "./images/tour_007.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
-    },
-    {
-        "id": 7,
-        "name": "The Falls at Night",
-        "duration": 2,
-        "rating": 4.5,
-        "numberOfReviews": 133,
-        "price": 144,
-        "image": "./images/tour_008.jpg",
-        "description":"Lorem ipsum dolor sit amet, consectetur ipsum dolor sit",
-        "location":"Al-Alin, Dubai"
+        "price": "AED: 55",
+        "image": "./images/dubai/goyaka_dubai_tour_01.jpg",
+        "shortDescription":"",
+        "longDescription": "",
+        "gallery":[
+            "./images/dubai/goyaka_dubai_tour_01.jpg",
+            "./images/dubai/goyaka_dubai_tour_02.jpg"
+        ]
     }
 ]

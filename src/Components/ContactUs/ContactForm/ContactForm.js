@@ -57,7 +57,7 @@ const ContactForm = () => {
                                         <ListItemIcon>
                                             <LocationOnIcon color='primary' />
                                         </ListItemIcon>
-                                        <ListItemText primary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue." />
+                                        <ListItemText primary="Deira, Dubai" />
 
                                     </ListItem>
                                     <ListItem >
@@ -65,7 +65,7 @@ const ContactForm = () => {
                                         <ListItemIcon>
                                             <PhoneIcon color='primary' />
                                         </ListItemIcon>
-                                        <ListItemText primary="+971 989 454 1278" />
+                                        <ListItemText primary="+971 50 273 6276" />
 
                                     </ListItem>
                                     <ListItem>
@@ -73,7 +73,7 @@ const ContactForm = () => {
                                         <ListItemIcon>
                                             <AlternateEmailIcon color='primary' />
                                         </ListItemIcon>
-                                        <ListItemText primary="email@domainname.com" />
+                                        <ListItemText primary="webbooking@goyakatravels.com" />
 
                                     </ListItem>
                                 </List>

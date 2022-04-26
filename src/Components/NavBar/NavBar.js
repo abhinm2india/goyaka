@@ -133,16 +133,16 @@ const NavBar = () => {
             onClick={() => { navigate("/"); }}
             sx={{
               height: '50px',
-              width: '135px',
-              maxHeight: { xs: 233, md: 167 },
-              maxWidth: { xs: 350, md: 250 },
+              width: '100px',
+              maxHeight: { xs: 50, md: 167 },
+              maxWidth: { xs: 130, md: 250 },
               flexGrow: 1, 
               display: { xs: 'flex', md: 'none' }
             }}
             alt="Logo"
             src="./images/goyaka.png"
           />
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent:'flex-end' }}>
             {/* {pages.map((page) => ( */}
             <Button
               // key={page}

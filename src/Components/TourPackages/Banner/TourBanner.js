@@ -1,4 +1,4 @@
-import { Box, Container,TextField, Button } from '@mui/material'
+import { Box, Container, TextField, Button, Typography } from '@mui/material'
 import React from 'react'
 
 
@@ -16,7 +16,7 @@ const TourBanner = () => {
                     opacity: 1,
                     display: 'flex',
                     alignItems: 'center',
-                    backgroundImage: 'url(./images/banner_01.jpg)',
+                    backgroundImage: 'url(./images/dubai/goyaka_dubai_tour_26.jpg)',
                     backgroundSize: 'cover',
                     justifyContent: 'center',
                     backgroundPosition: 'center',
@@ -24,8 +24,22 @@ const TourBanner = () => {
                 }}
 
             >
+                <Box sx={{
+                    // marginBottom: '30px',
+                }}>
+                    <Typography variant='h3' component='h3'
+                        sx={{
+                           
+                            color: 'primary.white',
+                            fontWeight: 'bold',
+                            textShadow: '1px 3px #0000003d'
+                        }}
+                    >
+                        Dubai Tourism Packages
+                    </Typography>
+                </Box>
 
-                <Box container sx={{
+                {/* <Box container sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     backgroundColor: 'primary.white',
@@ -47,7 +61,7 @@ const TourBanner = () => {
                     <Button variant='contained' disableElevation sx={{
                         color: 'primary.white',
                     }}>SEARCH</Button>
-                </Box>
+                </Box> */}
 
             </Box>
         </Container>

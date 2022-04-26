@@ -42,7 +42,7 @@ const Search = (props) => {
     const { isLoaded } = useJsApiLoader({
         googleMapsApiKey: API_KEY,
         libraries: ['places'],
-        region:"ae",
+        region: "ae",
     })
 
     const [pickup, setPickup] = useState();
@@ -53,8 +53,8 @@ const Search = (props) => {
     const [dropLat, setDropLat] = useState();
     const [dropLng, setDropLng] = useState();
 
-    const [pickName,setPickName]=useState();
-    const [dropName,setDropName]=useState();
+    const [pickName, setPickName] = useState();
+    const [dropName, setDropName] = useState();
 
     const [pickautocomplete, setPickAutocomplete] = useState(null);
     const [dropautocomplete, setDropAutocomplete] = useState(null);
@@ -73,7 +73,7 @@ const Search = (props) => {
     const getPickupCordinates = () => {
         const pickplace = pickautocomplete.getPlace();
         // console.log(pickautocomplete.getPlace().name);
-        
+
         setPickName(pickautocomplete.getPlace().name)
         // console.log(pickplace.geometry.location.lat().lat.toFixed(6));
         const ptl = pickplace.geometry.location.lat()
@@ -109,8 +109,8 @@ const Search = (props) => {
     const loc = [pickupLat, pickupLng, dropLat, dropLng];
     let navigate = useNavigate();
     const toTransport = (event) => {
-        // event.preventDefault();
-        navigate('/transport', { state: {loc, ridedate, ridetime, ridepackage, ridetype: parseInt(value),pickName,dropName } });
+        event.preventDefault();
+        navigate('/transport', { state: { loc, ridedate, ridetime, ridepackage, ridetype: parseInt(value), pickName, dropName } });
     }
 
 
@@ -130,7 +130,7 @@ const Search = (props) => {
             '@media screen and (max-width: 678px)': {
                 paddingLeft: '22px !important',
                 paddingRight: '22px !important',
-              },
+            },
         }}>
 
             <Box sx={{
@@ -150,12 +150,12 @@ const Search = (props) => {
                     </Box>
                     <TabPanel value="1">
 
-                        <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            <Grid item md ={3} xs={12}>
+                        <Grid container component='form' onSubmit={toTransport} spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                            <Grid item md={3} xs={12}>
                                 <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
                                     <TextField size='small'
                                         label="Pick me at"
-fullWidth
+                                        fullWidth
                                         // inputRef={pickRef}
                                         id="picktext"
                                         // defaultValue="Small"
@@ -163,12 +163,13 @@ fullWidth
                                         sx={{
                                             border: '5px solid primary',
                                         }}
+                                        required
                                     />
                                 </Autocomplete>
 
 
                             </Grid>
-                            <Grid item item md ={3} xs={12}>
+                            <Grid item item md={3} xs={12}>
                                 <Autocomplete onLoad={dropOnLoad} onPlaceChanged={getDropCordinates}>
                                     <TextField size='small'
                                         label="Drop me at"
@@ -181,12 +182,13 @@ fullWidth
                                         sx={{
                                             border: '5px solid primary',
                                         }}
+                                        required
                                     />
                                 </Autocomplete>
 
 
                             </Grid>
-                            <Grid item md ={2} xs={12}>
+                            <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         views={['day']}
@@ -195,13 +197,13 @@ fullWidth
                                         onChange={(newDate) => {
                                             setRideDate(newDate);
                                         }}
-                                        renderInput={(params) => <TextField {...params} size='small' helperText={null} />}
+                                        renderInput={(params) => <TextField {...params} required size='small' helperText={null} />}
                                     />
 
 
                                 </LocalizationProvider>
                             </Grid>
-                            <Grid item md ={2} xs={12}>
+                            <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <TimePicker
                                         label="Travel Time"
@@ -209,21 +211,21 @@ fullWidth
                                         onChange={(newTime) => {
                                             setRideTime(newTime);
                                         }}
-                                        renderInput={(params) => <TextField {...params} size='small' />}
+                                        renderInput={(params) => <TextField {...params} required size='small' />}
                                     />
 
 
                                 </LocalizationProvider>
                             </Grid>
                             {/* onClick={() => { navigate("/transport", { state: { pickup, drop, ridedate, ridetime } }); }} */}
-                            <Grid item md ={2} xs={12}>
+                            <Grid item md={2} xs={12}>
                                 <Button
-                                    onClick={toTransport}
+                                    
                                     variant='contained'
                                     sx={{
                                         color: '#fff',
                                     }}
-
+type='submit'
                                 >
                                     Search Car
                                 </Button>
@@ -231,8 +233,8 @@ fullWidth
                         </Grid>
                     </TabPanel>
                     <TabPanel value="2">
-                        <Grid container spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                            <Grid item md ={3} xs={12}>
+                        <Grid container component='form' onSubmit={toTransport} spacing={{ xs: 1, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                            <Grid item md={3} xs={12}>
                                 <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
                                     <TextField size='small'
                                         label="Pick me at"
@@ -244,10 +246,11 @@ fullWidth
                                         sx={{
                                             border: '5px solid primary',
                                         }}
+                                        required
                                     />
                                 </Autocomplete>
                             </Grid>
-                            <Grid item md ={3} xs={12}>
+                            <Grid item md={3} xs={12}>
                                 <FormControl fullWidth size='small'>
                                     <InputLabel id="demo-simple-select-label" >Package</InputLabel>
                                     <Select
@@ -257,6 +260,7 @@ fullWidth
                                         label="Package"
                                         onChange={handleChangedrop}
                                         displayEmpty
+                                        required
                                     >
                                         <MenuItem value={'Dubai 5hrs City Tour'}>Dubai 5hrs City Tour</MenuItem>
                                         <MenuItem value={'Dubai 10hrs City Tour'}>Dubai 10hrs City Tour</MenuItem>
@@ -266,7 +270,7 @@ fullWidth
                                     </Select>
                                 </FormControl>
                             </Grid>
-                            <Grid item md ={2} xs={12}>
+                            <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <DatePicker
                                         views={['day']}
@@ -275,13 +279,13 @@ fullWidth
                                         onChange={(newDate) => {
                                             setRideDate(newDate);
                                         }}
-                                        renderInput={(params) => <TextField {...params} size='small' helperText={null} />}
+                                        renderInput={(params) => <TextField {...params} size='small' required helperText={null} />}
                                     />
 
 
                                 </LocalizationProvider>
                             </Grid>
-                            <Grid item md ={2} xs={12}>
+                            <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                                     <TimePicker
                                         label="Travel Time"
@@ -289,16 +293,17 @@ fullWidth
                                         onChange={(newTime) => {
                                             setRideTime(newTime);
                                         }}
-                                        renderInput={(params) => <TextField {...params} size='small' />}
+                                        renderInput={(params) => <TextField {...params} required size='small' />}
                                     />
 
 
                                 </LocalizationProvider>
                             </Grid>
 
-                            <Grid item md ={2} xs={12} >
+                            <Grid item md={2} xs={12} >
                                 <Button
-                                    onClick={toTransport}
+                                type='submit'
+                                    // onClick={toTransport}
                                     variant='contained'
                                     sx={{
                                         color: '#fff',

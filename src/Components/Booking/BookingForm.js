@@ -115,45 +115,50 @@ const BookingForm = ({ origin, destination, bookingData }) => {
     const handleSubmit = e => {
         e.preventDefault()
         if (validate()) {
-           
+
             Booking();
         }
     }
 
     const Booking = async () => {
 
-        if(payment==='cash'){
+        await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking', formValues
+        ).then(function (response) {
+            console.log("bookingNo")
 
-            await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking', formValues
-            ).then(function (response) {
-                console.log('formvalues')
-                console.log(formValues)
-                setBookingRes(response.data)
-    
+            const bookingNo = response.data.data.bookingNo
+            console.log(bookingNo)
+            setBookingRes(response.data)
+
+            if (payment === "cash") {
                 handleOpenSecModal()
                 // setVehicle(response.data.data);
-    
-            }).catch(function (error) {
-                console.log(error);
-            })
+            }
+            if (payment === "card") {
 
-        }
-        if(payment==="card"){
-            
-            await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/stripe', formValues
-            ).then(function (response) {
-                // setBookingRes(response.data)
-    
-                // handleOpenSecModal()
-                console.log(formValues)
-                console.log(response)
-    
-            }).catch(function (error) {
-                console.log(error);
-            })
-        }
 
-     
+                axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/stripe', {
+                    "price": bookingData.car.priceValue,
+                    "booking": {
+                        "error": false,
+                        "msg": "Your booking has been confirmed. Please wait until we match our best Driver for you.",
+                        "data": { "bookingNo": bookingNo }
+                    }
+                }
+                ).then(function (stripRes) {
+                    console.log("stripe response")
+                    console.log(stripRes)
+                    window.location = stripRes.data.url
+
+                }).catch(function (error) {
+                    console.log(error);
+                })
+            }
+
+        }).catch(function (error) {
+            console.log(error);
+        })
+
     }
 
 

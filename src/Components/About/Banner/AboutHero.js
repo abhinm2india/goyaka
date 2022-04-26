@@ -51,7 +51,7 @@ mb:10,
                         GOYAKA TOURS AND TRAVELS
                     </Typography>
                     <Typography variant='subtutle1' align='center' color={'primary.white'}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
+                    We Promise a Journey That You Will Cherish Forever!
                     </Typography>
                 </Box>
 

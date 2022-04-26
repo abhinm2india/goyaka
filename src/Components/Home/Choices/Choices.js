@@ -40,7 +40,7 @@ const Choices = () => {
                             <Paper elevation={1} sx={{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                backgroundImage: 'url(./images/cat_001.jpg),radial-gradient(circle, red, yellow, green)',
+                                backgroundImage: 'url(./images/goyaka_dubail_01.jpg),radial-gradient(circle, red, yellow, green)',
                                 borderRadius: '15px',
                                 backgroundColor: '#000',
                                 padding: '20px',
@@ -56,20 +56,16 @@ const Choices = () => {
                                 <Typography variant='h6' sx={{
                                     color: 'primary.white',
                                 }}>
-                                    Lorem ipsum dummy
+                                    Dubai Museum
                                 </Typography>
-                                <Typography variant='body2' sx={{
-                                    color: 'primary.white',
-                                }}>
-                                    Lorem ipsum dummy
-                                </Typography>
+                             
                             </Paper>
                         </Grid>
                         <Grid item xs={4}>
                             <Paper elevation={1} sx={{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                backgroundImage: 'url(./images/cat_002.jpg),radial-gradient(circle, red, yellow, green)',
+                                backgroundImage: 'url(./images/goyaka_dubail_03.jpg),radial-gradient(circle, red, yellow, green)',
                                 borderRadius: '15px',
                                 backgroundColor: '#000',
                                 padding: '20px',
@@ -85,20 +81,16 @@ const Choices = () => {
                                 <Typography variant='h6' sx={{
                                     color: 'primary.white',
                                 }}>
-                                    Lorem ipsum dummy
+                                    Burj Khalifa
                                 </Typography>
-                                <Typography variant='body2' sx={{
-                                    color: 'primary.white',
-                                }}>
-                                    Lorem ipsum dummy
-                                </Typography>
+                            
                             </Paper>
                         </Grid>
                         <Grid item xs={4}>
                             <Paper elevation={1} sx={{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                backgroundImage: 'url(./images/cat_003.jpg),radial-gradient(circle, red, yellow, green)',
+                                backgroundImage: 'url(./images/goyaka_dubail_02.jpg),radial-gradient(circle, red, yellow, green)',
                                 borderRadius: '15px',
                                 backgroundColor: '#000',
                                 padding: '20px',
@@ -114,13 +106,9 @@ const Choices = () => {
                                 <Typography variant='h6' sx={{
                                     color: 'primary.white',
                                 }}>
-                                    Lorem ipsum dummy
+                                   Desert Safari
                                 </Typography>
-                                <Typography variant='body2' sx={{
-                                    color: 'primary.white',
-                                }}>
-                                    Lorem ipsum dummy
-                                </Typography>
+                             
                             </Paper>
                         </Grid>
                     </Grid>

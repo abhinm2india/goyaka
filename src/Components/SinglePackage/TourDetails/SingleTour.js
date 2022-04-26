@@ -6,17 +6,27 @@ import {
 } from '@mui/material'
 import { DatePicker, LocalizationProvider } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CusReview from '../Review/CusReview'
 import TourImages from '../TourImages/TourImages'
 import { Modal } from '@mui/material';
+import tourPackage from '../../TourPackages/Packages/touritem.json'
+const SingleTour = ({ dataId }) => {
 
-const SingleTour = () => {
+    const [packageItem, setPackageItem] = useState({});
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+
+    useEffect(() => {
+        const data = tourPackage.find((d) => d.id == dataId);
+        setPackageItem(data)
+
+    }, [dataId])
+
+
 
     const [value, setValue] = React.useState(0);
     const style = {
@@ -74,7 +84,7 @@ const SingleTour = () => {
                         fontSize: '25px',
                     },
                 }}>
-                    Tour package name
+                    {packageItem.name}
                 </Typography>
                 <Box container sx={{
                     display: 'flex',
@@ -93,14 +103,14 @@ const SingleTour = () => {
 
                     }}>
                         <Rating value={4.5} precision={0.5} readOnly />
-                        <Typography variant='body1' color={'primary'} marginLeft={4}>Dubai, Lorem iposum</Typography>
-                    </Box>
-                    <Box>
-                        <Typography variant='h6' sx={{
+                        <Typography variant='h5' component='body1'
+                        sx={{
                             fontWeight: 'bold',
-                            color: "primary.black",
-                        }}>$ 500 / Package</Typography>
+                           
+                        }}
+                        color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
                     </Box>
+                  
 
                 </Box>
 
@@ -166,7 +176,7 @@ const SingleTour = () => {
                                 justifyContent: 'space-between',
                                 flexDirection: 'column',
                             }}>
-                                <Typography variant='h6'>$ 600/Package</Typography>
+                                <Typography variant='h6'>{packageItem.price}</Typography>
                                 <Rating value={3.5} precision={0.5} readOnly />
                             </Box>
 
