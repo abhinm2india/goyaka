@@ -52,7 +52,9 @@ const SingleTour = ({ dataId }) => {
     return (
         <Container>
             <Box container marginTop={2}>
-                <Box marginTop={3} container sx={{
+
+<Stack direction='row' spacing={2}>
+<Box marginTop={3} container sx={{
                     display: 'flex',
                     alignItems: 'flex-start',
                     justifyContent: 'space-between',
@@ -77,6 +79,7 @@ const SingleTour = ({ dataId }) => {
                     {/* <TourImages imageId={dataId}/> */}
 
                 </Box>
+                <Box container>
                 <Typography variant='h4' mt={3} sx={{
                     // fontSize: '13px',
                     // fontWeight: 500,
@@ -114,6 +117,11 @@ const SingleTour = ({ dataId }) => {
 
 
                 </Box>
+                </Box>
+</Stack>
+
+          
+            
 
 
 

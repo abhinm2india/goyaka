@@ -14,7 +14,7 @@ const PackageItem = ({ tour }) => {
     const dataId = tour.id;
     return (
         <Grid item xs={4} md={3}>
-            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/tour-details", { state: {dataId} }); }}>
+            <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/tour-details", { state: { dataId } }); }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
