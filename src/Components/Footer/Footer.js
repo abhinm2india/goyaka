@@ -1,4 +1,4 @@
-import { Container, Grid, Box, Typography, List, ListItem, ListItemText, Stack } from '@mui/material'
+import { Container, Grid, Box, Typography, List, ListItem, ListItemText, Stack, Button } from '@mui/material'
 import React from 'react'
 import { Facebook, Instagram, Twitter, LinkedIn } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
@@ -70,33 +70,36 @@ const Footer = () => {
                             <List>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Tour Package
+                                      
+                                        <Button component='a' onClick={() => { navigate("/tour"); }}>City Tour</Button> 
                                     </ListItemText>
 
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Tour Package
-                                    </ListItemText>
-
-                                </ListItem>
-
-                                <ListItem alignItems='flex-start' disablePadding>
-                                    <ListItemText>
-                                        Tour Package
+                                  
+                                    <Button component='a' onClick={() => { navigate("/tour"); }}>Dolphinarium</Button> 
                                     </ListItemText>
 
                                 </ListItem>
 
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Tour Package
+                                    Desert Safari
+                                    <Button component='a' onClick={() => { navigate("/tour"); }}>Desert Safari</Button> 
+                                    </ListItemText>
+
+                                </ListItem>
+
+                                <ListItem alignItems='flex-start' disablePadding>
+                                    <ListItemText>
+                                    <Button component='a' onClick={() => { navigate("/tour"); }}>Dubai Museum</Button>
                                     </ListItemText>
 
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Tour Package
+                                    <Button component='a' onClick={() => { navigate("/tour"); }}>Burj Khalifa</Button>
                                     </ListItemText>
 
                                 </ListItem>
@@ -108,41 +111,35 @@ const Footer = () => {
                         <Box container sx={{
                             marginLeft: '20px',
                         }}>
-                            <Typography variant='h6'>Top Destination</Typography>
+                            <Typography variant='h6'>Quick Links</Typography>
                             <List>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Top Destination
+                                    <Button component='a' onClick={() => { navigate("/"); }}>Home</Button>  
                                     </ListItemText>
 
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Top Destination
-                                    </ListItemText>
-
-                                </ListItem>
-
-                                <ListItem alignItems='flex-start' disablePadding>
-                                    <ListItemText>
-                                        Top Destination
+                                     <Button component='a' onClick={() => { navigate("/about-us"); }}>About Us</Button>  
                                     </ListItemText>
 
                                 </ListItem>
 
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Top Destination
+                                    <Button component='a' onClick={() => { navigate("/tour"); }}>Tour Packages</Button>  
                                     </ListItemText>
 
                                 </ListItem>
+
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        Top Destination
+                                    <Button component='a' onClick={() => { navigate("/contact-us"); }}>Contact Us</Button>  
                                     </ListItemText>
 
                                 </ListItem>
-
+                            
                             </List>
                         </Box>
                     </Grid>

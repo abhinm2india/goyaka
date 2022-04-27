@@ -53,17 +53,17 @@ const SingleTour = ({ dataId }) => {
         <Container>
             <Box container marginTop={2}>
 
-<Stack direction='row' spacing={2}>
-<Box marginTop={3} container sx={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'space-between',
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} mb={10}>
+                    {/* <Box marginTop={3} container sx={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        justifyContent: 'space-between',
 
-                    '@media screen and (max-width: 678px)': {
-                        flexDirection: 'column',
+                        '@media screen and (max-width: 678px)': {
+                            flexDirection: 'column',
 
-                    },
-                }}>
+                        },
+                    }}> */}
                     <Box component='img' src={packageItem.image}
                         sx={{
                             height: 400,
@@ -78,54 +78,53 @@ const SingleTour = ({ dataId }) => {
                     </Box>
                     {/* <TourImages imageId={dataId}/> */}
 
-                </Box>
-                <Box container>
-                <Typography variant='h4' mt={3} sx={{
-                    // fontSize: '13px',
-                    // fontWeight: 500,
-                    '@media screen and (max-width:678px)': {
-                        fontSize: '25px',
-                    },
-                }}>
-                    {packageItem.name}
-                </Typography>
-                <Box container sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    marginTop: '15px',
-                    marginBottom:'80px',
-                    justifyContent: 'space-between',
-                    '@media screen and (max-width:678px)': {
-                        flexDirection: 'column',
-                    },
-                }}>
-                    <Box sx={{
-                        display: 'flex',
-                        alignItems: 'center',
+                    {/* </Box> */}
+                    <Box container>
+                        <Typography variant='h4' mt={3} sx={{
+                            // fontSize: '13px',
+                            // fontWeight: 500,
+                            '@media screen and (max-width:678px)': {
+                                fontSize: '25px',
+                            },
+                        }}>
+                            {packageItem.name}
+                        </Typography>
+                        <Box container sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            marginTop: '15px',
+                            marginBottom: '80px',
+                            justifyContent: 'space-between',
+                            '@media screen and (max-width:678px)': {
+                                flexDirection: 'column',
+                            },
+                        }}>
 
-                        justifyContent: 'space-between',
+                            <Box>
+                                <Rating value={4.5} precision={0.5} readOnly />
+                            </Box>
+                            <Box>
+                                <Typography variant='h5' component='body1'
+                                    sx={{
+                                        fontWeight: 'bold',
 
-                    }}>
-                        <Rating value={4.5} precision={0.5} readOnly />
-                        <Typography variant='h5' component='body1'
-                            sx={{
-                                fontWeight: 'bold',
+                                    }}
+                                    color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
+                            </Box>
 
-                            }}
-                            color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
+
+
+
+                        </Box>
                     </Box>
-
-
-                </Box>
-                </Box>
-</Stack>
-
-          
-            
+                </Stack>
 
 
 
-            
+
+
+
+
                 {/* <Box container sx={{
                     marginBottom: '70px',
                     borderTop: '1px solid #c1c1c1',
