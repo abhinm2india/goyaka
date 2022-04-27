@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/goyaka/static/css/main.e6c13ad2.css",
-    "main.js": "/goyaka/static/js/main.57be6a5d.js",
+    "main.js": "/goyaka/static/js/main.ba555822.js",
     "index.html": "/goyaka/index.html",
     "main.e6c13ad2.css.map": "/goyaka/static/css/main.e6c13ad2.css.map",
-    "main.57be6a5d.js.map": "/goyaka/static/js/main.57be6a5d.js.map"
+    "main.ba555822.js.map": "/goyaka/static/js/main.ba555822.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.57be6a5d.js"
+    "static/js/main.ba555822.js"
   ]
 }
