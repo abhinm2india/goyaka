@@ -1,7 +1,6 @@
 import {
     Container, Box, Typography,
     Rating, Paper,
-
     Button, FormControl, InputLabel, Select, MenuItem, TextField, Stack
 } from '@mui/material'
 import { DatePicker, LocalizationProvider } from '@mui/lab';
@@ -63,7 +62,7 @@ const SingleTour = ({ dataId }) => {
 
                     },
                 }}>
-                    <Box component='img' src='./images/tour_002.jpg'
+                    <Box component='img' src={packageItem.image}
                         sx={{
                             height: 400,
                             borderRadius: 3,
@@ -75,7 +74,8 @@ const SingleTour = ({ dataId }) => {
                     >
 
                     </Box>
-                    <TourImages />
+                    {/* <TourImages imageId={dataId}/> */}
+
                 </Box>
                 <Typography variant='h4' mt={3} sx={{
                     // fontSize: '13px',
@@ -90,6 +90,7 @@ const SingleTour = ({ dataId }) => {
                     display: 'flex',
                     alignItems: 'center',
                     marginTop: '15px',
+                    marginBottom:'80px',
                     justifyContent: 'space-between',
                     '@media screen and (max-width:678px)': {
                         flexDirection: 'column',
@@ -104,35 +105,20 @@ const SingleTour = ({ dataId }) => {
                     }}>
                         <Rating value={4.5} precision={0.5} readOnly />
                         <Typography variant='h5' component='body1'
-                        sx={{
-                            fontWeight: 'bold',
-                           
-                        }}
-                        color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
+                            sx={{
+                                fontWeight: 'bold',
+
+                            }}
+                            color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
                     </Box>
-                  
+
 
                 </Box>
 
 
 
-                <Box container sx={{
-                    marginY: '30px',
-                }}>
-                    <Typography variant='body1'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vestibulum sem odio, iaculis laoreet efficitur sed, sodales quis tellus.
-                        Ut malesuada elementum nisi non tempor.
-                        Integer accumsan dui sit amet magna vestibulum sagittis.
-                        In hac habitasse platea dictumst. Cras at venenatis metus,
-                        vel consectetur urna. Aliquam in odio augue.
-                        Vivamus dapibus neque vel justo viverra, at imperdiet nunc luctus.
-                        Nunc magna velit, eleifend ut velit sit amet, congue molestie urna.
-                        Praesent vulputate sed magna vitae lobortis.
-
-                    </Typography>
-                </Box>
-                <Box container sx={{
+            
+                {/* <Box container sx={{
                     marginBottom: '70px',
                     borderTop: '1px solid #c1c1c1',
                     borderBottom: '1px solid #c1c1c1',
@@ -140,7 +126,7 @@ const SingleTour = ({ dataId }) => {
                 }}>
 
                     <CusReview />
-                </Box>
+                </Box> */}
 
 
                 <Paper sx={{
@@ -183,13 +169,15 @@ const SingleTour = ({ dataId }) => {
                             <Stack direction={{ xs: 'column', sm: 'row' }}
                                 spacing={{ xs: 1, sm: 2, md: 4 }} mt={3}>
 
-                                <Button fullWidth variant='contained' size='large' disableElevation sx={{
+                                {/* <Button fullWidth variant='contained' size='large' disableElevation sx={{
                                     color: 'primary.white',
                                     fontSize: '16px',
                                     fontWeight: '600',
                                 }} onClick={handleOpen}>
                                     BOOK NOW
-                                </Button>
+                                </Button> */}
+                                <Typography>Mail To Us</Typography>
+                                <Typography component='a' variant='body1' href='mailto:webbooking@goyakatravels.com'>webbooking@goyakatravels.com</Typography>
                             </Stack>
 
 

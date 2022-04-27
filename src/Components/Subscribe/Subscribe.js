@@ -48,7 +48,7 @@ const Subscribe = () => {
                         <Typography variant='body1' align='center' sx={{
                             color: 'primary.white',
                         }} >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
+                           Write to us your requirements and we will get back to you in no time.
                         </Typography>
                     </Box>
                     <Box container sx={{

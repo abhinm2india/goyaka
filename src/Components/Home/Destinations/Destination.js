@@ -38,11 +38,11 @@ const Destination = () => {
                             Top Destinations For You
                         </Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                         <Typography variant='body1' align='center'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue.
                         </Typography>
-                    </Box>
+                    </Box> */}
                 </Box>
 
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{
@@ -61,7 +61,7 @@ const Destination = () => {
                     justifyContent:'center',
                     paddingTop:'40px',
                 }}>
-                    <Button variant='contained' onClick={()=>{navigate("/tour");}} color='primary' sx={{
+                    <Button variant='contained' component='a' onClick={()=>{navigate("/tour");}} color='primary' sx={{
                         color:'primary.white',
                     }}>View All Destinations</Button>
                 </Box>

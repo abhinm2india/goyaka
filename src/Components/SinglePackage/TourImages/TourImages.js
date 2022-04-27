@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import tourPackage from '../../TourPackages/Packages/touritem.json';
 
 function srcset(image, size, rows = 1, cols = 1) {
     return {
@@ -10,7 +11,20 @@ function srcset(image, size, rows = 1, cols = 1) {
     };
 }
 
-const TourImages = () => {
+
+
+const TourImages = ({imageId}) => {
+   
+    const [packageItem, setPackageItem] = useState({});
+    useEffect(() => {
+        const data = tourPackage.find((d) => d.id == imageId);
+        setPackageItem(data)
+    console.log('from image')
+  
+    }, [imageId])
+
+    console.log(packageItem.gallery)
+
     return (
         <ImageList
         sx={{ width: 500,
@@ -26,11 +40,11 @@ const TourImages = () => {
         rowHeight={121}
         
       >
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+        {packageItem.gallery.map((item) => (
+          <ImageListItem key={item} cols={2 || 1} rows={2|| 1}>
             <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
+              {...srcset(item, 121, 2, 2)}
+            //   alt={item.title}
               loading="lazy"
             />
           </ImageListItem>

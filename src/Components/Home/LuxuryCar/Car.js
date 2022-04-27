@@ -34,7 +34,7 @@ const Car = () => {
                 }}>
                     <Box>
                         <Typography variant='h6' color='primary' component='h6'>
-                            LOREM IPOSUM
+                           LUXURY CARS
                         </Typography>
                     </Box>
                     <Box>
@@ -46,21 +46,20 @@ const Car = () => {
 
                             }}
                         >
-                            Lorem Ipsum
-                            Dolor Sit amet consectetur
+                          Luxurious Ride a Single Click Away
                         </Typography>
                     </Box>
                     <Box>
                         <Typography variant='body1' color='primary.white'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                        We believe that elegance never fades away. That’s why we offer you the best-in-class chauffeur service in the most sophisticated way. 
                         </Typography>
                     </Box>
                     <Box container sx={{
                         marginY: '30px',
                     }}>
-                        <Button variant='contained' sx={{
+                        <Button variant='contained' component='a' href='#' sx={{
                             color: 'primary.white',
-                        }}>Know More</Button>
+                        }}>Book Your Ride</Button>
                     </Box>
                 </Box>
             </Container>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, Container, Grid,  Typography, Box, TextField, Stack } from '@mui/material'
-import { DatePicker,  LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-
+import { Container, Grid, Typography, Box, Paper, Stack, List, ListItem, ListItemText,ListItemIcon } from '@mui/material'
+import PhoneIcon from '@mui/icons-material/Phone';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 const GetInTouch = () => {
     const [value, setValue] = React.useState(null);
     return (
@@ -16,12 +16,13 @@ const GetInTouch = () => {
                             paddingRight: '50px',
                             display: 'flex',
                             alignItems: 'flex-start',
-                            justifyContent: 'flex-start',
-                            flexDirection: 'column'
+                            justifyContent: 'center',
+                            flexDirection: 'column',
+                            height: 'auto'
                         }}>
                             <Box>
                                 <Typography variant='h6' color='primary' component='h6'>
-                                    BOOKING
+                                    GET IN TOUCH
                                 </Typography>
                             </Box>
                             <Box>
@@ -33,14 +34,44 @@ const GetInTouch = () => {
 
                                     }}
                                 >
-                                    Lorem Ipsum
-                                    Dolor Sit Amet
+                                     Your Doorway To The City Of Dreams
                                 </Typography>
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet, nibh non bibendum tincidunt, nulla augue vehicula augue
+                              
                                 </Typography>
+                            </Box>
+
+                            <Box>
+                                <Stack direction='column'>
+                                    <List spacing={10}>
+                                        <ListItem>
+
+                                            <ListItemIcon>
+                                                <LocationOnIcon color='primary' />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Deira, Dubai" />
+
+                                        </ListItem>
+                                        <ListItem >
+
+                                            <ListItemIcon>
+                                                <PhoneIcon color='primary' />
+                                            </ListItemIcon>
+                                            <ListItemText primary="+971 50 273 6276" />
+
+                                        </ListItem>
+                                        <ListItem>
+
+                                            <ListItemIcon>
+                                                <AlternateEmailIcon color='primary' />
+                                            </ListItemIcon>
+                                            <ListItemText primary="webbooking@goyakatravels.com" />
+
+                                        </ListItem>
+                                    </List>
+                                </Stack>
                             </Box>
 
                         </Box>
@@ -52,66 +83,26 @@ const GetInTouch = () => {
                             justifyContent: 'center',
                             flexDirection: 'column',
                             // padding: '0 40px',
-                            width: '100%',                           // paddingY: '60px',
-
-                            borderRadius: '20px',
 
                         }}>
-                            <Box container sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                zIndex: 2,
-                                // margin:'30px',
-                                boxShadow: '0px 4px 32px rgba(0, 0, 0, 0.12);',
-                                paddingY: '50px',
-                                paddingX: '30px',
-                                backgroundColor: 'primary.white',
-                                borderRadius: '10px',
+                            <Paper sx={{
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundImage: 'url(./images/contactus.png),radial-gradient(circle, red, yellow, green)',
+                                height: '400px',
+                                width: '90%',
+
+                                objectFit: 'cover',
+                                border: 'none',
+                                borderRadius: '15px',
+                                zIndex: 1,
+                                // padding: '20px',
+                                '@media screen and (max-width: 678px)': {
+                                    width: '100%',
+                                },
                             }}>
-                                <Stack
-                                    component="form"
 
-                                    spacing={2}
-                                    noValidate
-                                    autoComplete="off"
-                                >
-                                    <TextField
-
-
-                                        label="Departing From"
-                                        variant="outlined"
-                                        size="medium"
-                                        fullWidth
-                                    />
-                                    <TextField
-
-                                        label="Going To"
-
-                                        variant="outlined"
-                                        size="medium"
-                                        fullWidth
-                                    />
-                                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                        <DatePicker
-                                            label="Travel Date"
-
-                                            value={value}
-                                            onChange={(newValue) => {
-                                                setValue(newValue);
-                                            }}
-                                            renderInput={(params) => <TextField size="medium" {...params} />}
-                                        />
-
-
-                                    </LocalizationProvider>
-                                    <Button fullWidth variant='contained'
-                                        sx={{
-                                            color: 'primary.white',
-                                        }}
-                                    >BOOK NOW</Button>
-                                </Stack>
-
-                            </Box>
+                            </Paper>
                             <Box sx={{
                                 height: '150px',
                                 width: '100%',
@@ -119,7 +110,6 @@ const GetInTouch = () => {
                                 border: 'none',
                                 borderRadius: '10px',
                                 marginTop: '-100px',
-
 
 
                                 '@media screen and (max-width: 678px)': {
