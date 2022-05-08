@@ -1,7 +1,7 @@
-import { Card, CardActionArea, CardActions, CardContent, IconButton, CardMedia, Grid, Button, Typography } from '@mui/material'
+import { Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Button, Typography } from '@mui/material'
 import React, { useState } from 'react'
 
-import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
+// import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -26,10 +26,12 @@ const PackageItem = ({ car, ride, rideType, searchdata}) => {
         <Grid item xs={4} md={3}>
             <Card sx={{ maxWidth: 345 }}
                 onClick={() => { navigate("/booking", { state: { car, ride, rideType, pickName, dropName, packageName, bdate, plat, plog, dlat, dlog, } }); }}>
-                <CardActionArea>
+                <CardActionArea sx={{
+                    height:{xs:'auto',md:'350px'}
+                }}>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="180"
                         image={car.iconPassive}
                         alt="green iguana"
                         sx={{

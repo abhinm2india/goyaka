@@ -2,7 +2,7 @@
 import { Button, Container, Grid, TextField, Box, Tab, FormControl, InputLabel, Select, MenuItem, Skeleton } from '@mui/material'
 
 import React, { FC, RefObject, useRef, useState } from 'react'
-import { DatePicker, LocalizationProvider, TimePicker, TabContext, TabList, TabPanel } from '@mui/lab';
+import { DatePicker, LocalizationProvider, TimePicker, TabContext, TabList, TabPanel,MobileTimePicker } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import { GpsFixed } from '@mui/icons-material'
 // import Autocomplete, { usePlacesWidget } from "react-google-autocomplete";
@@ -205,7 +205,7 @@ const Search = (props) => {
                             </Grid>
                             <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <TimePicker
+                                    <MobileTimePicker
                                         label="Travel Time"
                                         value={ridetime}
                                         onChange={(newTime) => {
@@ -220,12 +220,12 @@ const Search = (props) => {
                             {/* onClick={() => { navigate("/transport", { state: { pickup, drop, ridedate, ridetime } }); }} */}
                             <Grid item md={2} xs={12}>
                                 <Button
-                                    
+
                                     variant='contained'
                                     sx={{
                                         color: '#fff',
                                     }}
-type='submit'
+                                    type='submit'
                                 >
                                     Search Car
                                 </Button>
@@ -287,7 +287,7 @@ type='submit'
                             </Grid>
                             <Grid item md={2} xs={12}>
                                 <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <TimePicker
+                                    <MobileTimePicker
                                         label="Travel Time"
                                         value={ridetime}
                                         onChange={(newTime) => {
@@ -302,7 +302,7 @@ type='submit'
 
                             <Grid item md={2} xs={12} >
                                 <Button
-                                type='submit'
+                                    type='submit'
                                     // onClick={toTransport}
                                     variant='contained'
                                     sx={{
