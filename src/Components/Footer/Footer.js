@@ -85,7 +85,7 @@ const Footer = () => {
 
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                    Desert Safari
+                                   
                                     <Button component='a' onClick={() => { navigate("/tour"); }}>Desert Safari</Button> 
                                     </ListItemText>
 
@@ -157,14 +157,14 @@ const Footer = () => {
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        +971 50 273 6276
+                                        +971 045914066
                                     </ListItemText>
 
                                 </ListItem>
 
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        webbooking@goyakatravels.com
+                                    booking@goyakatravels.com
                                     </ListItemText>
 
                                 </ListItem>

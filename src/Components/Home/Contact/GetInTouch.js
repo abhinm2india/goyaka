@@ -59,7 +59,7 @@ const GetInTouch = () => {
                                             <ListItemIcon>
                                                 <PhoneIcon color='primary' />
                                             </ListItemIcon>
-                                            <ListItemText primary="+971 50 273 6276" />
+                                            <ListItemText primary="+971 045914066" />
 
                                         </ListItem>
                                         <ListItem>
@@ -67,7 +67,7 @@ const GetInTouch = () => {
                                             <ListItemIcon>
                                                 <AlternateEmailIcon color='primary' />
                                             </ListItemIcon>
-                                            <ListItemText primary="webbooking@goyakatravels.com" />
+                                            <ListItemText primary="booking@goyakatravels.com" />
 
                                         </ListItem>
                                     </List>

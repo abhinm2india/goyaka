@@ -3,14 +3,16 @@ import {
     Radio, RadioGroup, Modal
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import ReactPhoneInput from 'react-phone-input-material-ui';
+// import ReactPhoneInput from 'react-phone-input-material-ui';
 import { format } from 'date-fns';
 import axios from 'axios';
 import { Form, UseForm } from '../UseForm/UseForm';
 import Controls from '../Controls/Controls';
-
+import { useNavigate } from 'react-router-dom';
 
 const BookingForm = ({ origin, destination, bookingData }) => {
+
+    let navigate = useNavigate();
 
     const style = {
         position: 'absolute',
@@ -122,7 +124,8 @@ const BookingForm = ({ origin, destination, bookingData }) => {
 
     const Booking = async () => {
 
-        await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking', formValues
+        // https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking
+        await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebookingGoyaka', formValues
         ).then(function (response) {
             console.log("bookingNo")
 
@@ -362,17 +365,26 @@ const BookingForm = ({ origin, destination, bookingData }) => {
                         <Typography variant='body1'>
                             {bookingRes.msg}
                         </Typography>
-                    </Box>
-                    <Box component='div' container mt={2} sx={{
-                        textAlign: 'center',
-                    }}>
+
+                        <Stack direction='row' spacing={2} mt={3} alignItems='center' justifyContent='center'>
+                        <Button variant='outlined' onClick={()=>{navigate("/")}}>
+                            Do you need to book more?
+                        </Button>
+                        <Typography>OR</Typography>
                         <Button variant='contained' disableElevation sx={{
                             color: 'primary.white',
                             fontSize: '13px',
                             fontWeight: '600',
                         }} onClick={handleCloseSecModal}>
-                            Close
+                            Continue
                         </Button>
+                        </Stack>
+                     
+                    </Box>
+                    <Box component='div' container mt={2} sx={{
+                        textAlign: 'center',
+                    }}>
+                       
                     </Box>
                 </Box>
 

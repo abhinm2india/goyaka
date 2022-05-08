@@ -1,7 +1,5 @@
 import { Card, CardActionArea, CardActions, CardContent, IconButton, CardMedia, Grid, Rating, Typography } from '@mui/material'
 import React from 'react'
-
-import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +13,9 @@ const PackageItem = ({ tour }) => {
     return (
         <Grid item xs={4} md={3}>
             <Card sx={{ maxWidth: 345 }} onClick={() => { navigate("/tour-details", { state: { dataId } }); }}>
-                <CardActionArea>
+                <CardActionArea sx={{
+                    height:{xs:'auto' ,md:'300px'} 
+                }}>
                     <CardMedia
                         component="img"
                         height="140"
