@@ -11,6 +11,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Transport from "./Components/Transport/Transport";
 import VehicleDetails from "./Components/Transport/VehicleDetails/VehicleDetails";
 import Booking from "./Components/Booking/Booking";
+import HotelBooking from "./Components/HotelBooking/HotelBooking";
 function App() {
   let mytheme = responsiveFontSizes(theme);
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/hotel-booking" element={<HotelBooking />} />
         </Routes>
       </Router>
 
