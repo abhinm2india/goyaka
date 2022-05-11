@@ -8,6 +8,7 @@ import SinglePackage from "./Components/SinglePackage/SinglePackage";
 import About from "./Components/About/About";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Transport from "./Components/Transport/Transport";
 import VehicleDetails from "./Components/Transport/VehicleDetails/VehicleDetails";
 import Booking from "./Components/Booking/Booking";
@@ -24,6 +25,7 @@ function App() {
       {/* <ContactUs/> */}
 
       <Router basename="/">
+      {/* <Router> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/tour" element={<TourPackage />} />

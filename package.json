@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://abhinm2india.github.io/goyaka",
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@material-ui/icons": "^4.11.2",
@@ -16,6 +17,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "date-fns": "^2.28.0",
+    "emailjs-com": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-autocomplete": "^2.6.1",

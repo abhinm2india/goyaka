@@ -1,12 +1,17 @@
 import { Container, Typography, Modal, Box, Stack, TextField, Paper, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useJsApiLoader, Autocomplete } from '@react-google-maps/api'
-import { DatePicker, LocalizationProvider, TimePicker, TabContext, TabList, TabPanel, MobileTimePicker } from '@mui/lab';
+import { DatePicker, LocalizationProvider, TimePicker, TabContext, TabList, TabPanel, MobileTimePicker, LoadingButton } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { Form, UseForm } from '../UseForm/UseForm';
+// import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
+import SendIcon from '@mui/icons-material/Send';
+import { useNavigate } from 'react-router-dom';
 
 const BookingForm = () => {
 
+    let navigate = useNavigate()
     const API_KEY = process.env.REACT_APP_API_KEY;
 
     const { isLoaded } = useJsApiLoader({
@@ -27,7 +32,7 @@ const BookingForm = () => {
 
     const handleChangeAdults = (e) => {
         setAdults(e.target.value)
-        console.log("hey")
+
     }
     const handleChangeChild = (e) => {
         setChildren(e.target.value)
@@ -60,16 +65,21 @@ const BookingForm = () => {
         setGoingto(dropplace.name)
     }
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [phone, setPhone] = useState()
+
+    const [openSecM, setOpenSecM] = useState(false);
+    const handleCloseSecM = () => {
+        setOpenSecM(false)
+        navigate("/");
+    };
+
+    const handleSubmitSecM = () => setOpenSecM(true)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         setOpen(true)
     }
 
@@ -77,9 +87,9 @@ const BookingForm = () => {
         userName: '',
         userEmail: '',
         userPhone: '',
-       
+
     }
-   
+
     const {
         formValues,
         setFormValues,
@@ -103,11 +113,62 @@ const BookingForm = () => {
 
     const sendReq = (e) => {
         e.preventDefault()
-        // if (validate()) {
-        //     console.log('hello')
-        // }
+        if (validate()) {
+            console.log('hello')
+        }
         console.log(formValues)
     }
+
+    const templateParams = {
+        name: formValues.userName,
+        email: formValues.userEmail,
+        phoneNumber: formValues.userPhone,
+        departure: departure,
+        goingto: goingto,
+        adults: adults,
+        children: children,
+        ridedate: ridedate,
+
+    };
+
+    const [loading, setLoading] = useState(false);
+    // function handleClick() {
+    //     setLoading(true);
+    // }
+    // jinu@lagoontechnologies.com
+
+    const [emailResposne, setEmailResponse] = useState(null)
+
+    useEffect(() => {
+        if (emailResposne) {
+            setLoading(false)
+            setOpen(false)
+            handleSubmitSecM()
+        }
+        console.log(loading)
+
+        return () => {
+            // cancel the subscription
+            setEmailResponse(null);
+        };
+
+    }, [emailResposne])
+
+    const sendEmail = (e) => {
+
+        e.preventDefault();
+        if (validate()) {
+            setLoading(true)
+            emailjs.send('service_dn309pg', 'template_xxmcdir', templateParams, 'S3F5_MUBsi9MJbGzU')
+                .then(function (response) {
+                    setEmailResponse(response.status)
+                    console.log('SUCCESS!', response.status, response.text);
+
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        }
+    };
 
     const style = {
         position: 'absolute',
@@ -184,7 +245,7 @@ const BookingForm = () => {
                     sx={{
                         border: '0px solid #000',
                         borderRadius: '10px',
-                        // boxShadow: 'rgb(0 0 0 / 17%) 0px 6px 29px -4px',
+                        boxShadow: 'rgb(0 0 0 / 17%) 0px 6px 29px -4px',
                         padding: 10
                     }}
                 >
@@ -297,7 +358,7 @@ const BookingForm = () => {
                 </Paper>
             </Container>
             <div>
-                <Button onClick={handleOpen}>Open modal</Button>
+                {/* <Button onClick={handleOpen}>Open modal</Button> */}
                 <Modal
                     open={open}
                     onClose={handleClose}
@@ -305,7 +366,7 @@ const BookingForm = () => {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
-                        <Stack spacing={3} component={Form} onSubmit={sendReq}>
+                        <Stack spacing={3} component={Form} onSubmit={sendEmail}>
                             <TextField variant='outlined' size='small'
                                 label='Your Name'
                                 name='userName'
@@ -330,10 +391,47 @@ const BookingForm = () => {
                                 error
                                 helperText={errors.userPhone}
                             />
-                            <Button type='submit' variant='contained'>Submit</Button>
+
+                            {
+                                loading ? <LoadingButton
+                                    disabled
+                                    loading={loading}
+                                    loadingPosition="end"
+                                    variant="contained"
+                                >
+                                    Sending..
+                                </LoadingButton> : (<Button type='submit' variant='contained'>Submit</Button>)
+                            }
+
+
                         </Stack>
                     </Box>
                 </Modal>
+
+
+                <Modal
+                    open={openSecM}
+                    onClose={handleCloseSecM}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <Stack spacing={2} alignItems='center' justifyContent='center'>
+                            <Typography variant='h6'>
+                                Message send successfully.
+                            </Typography>
+                            <Typography variant='subtitle1'>
+                                Our executive will contact you shortly!
+                            </Typography>
+                            <Button variant='outlined' onClick={handleCloseSecM}>Thank You</Button>
+                        </Stack>
+
+
+                    </Box>
+
+                </Modal>
+
+
             </div>
         </>
 
