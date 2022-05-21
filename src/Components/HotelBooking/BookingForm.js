@@ -135,7 +135,7 @@ const BookingForm = () => {
     // function handleClick() {
     //     setLoading(true);
     // }
-    // jinu@lagoontechnologies.com
+
 
     const [emailResposne, setEmailResponse] = useState(null)
 
@@ -186,7 +186,7 @@ const BookingForm = () => {
 
     return (
         <>
-            <Container>
+            <Container >
                 <Box
                     Container
                     sx={{
@@ -246,11 +246,19 @@ const BookingForm = () => {
                         border: '0px solid #000',
                         borderRadius: '10px',
                         boxShadow: 'rgb(0 0 0 / 17%) 0px 6px 29px -4px',
-                        padding: 10
+
+                        marginBottom: 10,
+
                     }}
+
                 >
-                    <Stack spacing={3} component='form' onSubmit={handleSubmit}>
-                        <Stack direction='row' spacing={2} alignItems='center' justifyContent='center'>
+                    <Stack spacing={3} component='form' onSubmit={handleSubmit}
+                        padding={{ xs: 3, md: 5 }}
+                    >
+                        <Stack alignItems='center' justifyContent='center'
+                            direction={{ xs: 'column', sm: 'row' }}
+                            spacing={{ xs: 2, sm: 2, md: 4 }}
+                        >
 
                             <Autocomplete onLoad={pickOnLoad} onPlaceChanged={getPickupCordinates}>
                                 <TextField size='small'
@@ -279,6 +287,7 @@ const BookingForm = () => {
                                         border: '5px solid primary',
                                     }}
                                     required
+                                    fullWidth
                                 />
                             </Autocomplete>
                             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -296,7 +305,8 @@ const BookingForm = () => {
                             </LocalizationProvider>
 
                         </Stack>
-                        <Stack direction='row' spacing={2} alignItems='center' justifyContent='center'>
+                        <Stack direction={{ xs: 'column', sm: 'row' }}
+                            spacing={{ xs: 2, sm: 2, md: 4 }} alignItems='center' justifyContent='center'>
 
                             <FormControl fullWidth size='small'>
                                 <InputLabel id="demo-simple-select-label" >Adults</InputLabel>
@@ -356,6 +366,89 @@ const BookingForm = () => {
                         </Stack>
                     </Stack>
                 </Paper>
+
+                <Box mb={5}>
+                    <Typography variant='body2' mb={3}>
+                        The year 2022 is witnessing a spike in the number of people staying in hotels and dining out to relax from their stressful daily life. In a city like Dubai, where the world’s stunning architectures are situated, the residents and tourists alike like to spend their holidays by choosing the best hotels in the city. The hotels in the UAE are welcoming their guests with the best packages ever and they make sure their customers return to them for the next staycation as well.
+                    </Typography>
+                    <Typography variant='body2'>
+                        Business travelers staying in the country are not less in number and they too prefer an ambience where they can work, relax, and feel home when at a hotel. Hotels in Dubai provide all the facilities necessary for corporates with fastest Wi-Fi connections, uninterrupted power supply, and other necessary amenities such as work desk, comfy chairs, and lamps.
+                    </Typography>
+                </Box>
+                <Box mb={4}>
+                <Typography variant='h4' component='h2' sx={{
+                                fontWeight: 700,
+                            }}>
+                                A stay as comfortable as at home!
+                            </Typography>
+                    <Stack direction='row' alignItems='center' justifyContent='space-between'>
+                        <Box>
+                          
+                            <Typography variant='body2' mt={2}>
+                                Goyaka has tie ups with the UAE’s best hotels and we help you book the best-in-class rooms for you to make your stay in the country more memorable. In line with the Expo 2020, the convergence of sustainability and hygiene is an area of innovation in the hospitality sector now. Our primary goal is to provide our guests with shelter, food, refreshment, and other services, offering a homely atmosphere for people on a journey away from home.
+                            </Typography>
+                            <Typography variant='body2' mt={2}>
+                                We offer the best list of hotels in the most affordable budgets for your enquiries with us. One of our executives will get in touch with you once you submit the enquiry using the above enquiry form. We accept all modes of payments and make the entire process hassle-free. *Free cancellation up to 24 hours prior to check-in is available. We make the search easier for you!
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <Box
+                                Container
+                                sx={{
+                                    height: 'auto',
+                                    width: '100%',
+                                    objectFit: 'cover',
+                                    borderRadius: '25px',
+                                    // backgroundColor: '#000',
+                                    opacity: 1,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    backgroundImage: 'linear-gradient(20deg, rgb(0 0 0 / 56%), rgb(0 0 0 / 15%)),url(./images/hotel_booking.jpg)',
+                                    backgroundSize: 'cover',
+                                    justifyContent: 'center',
+                                    backgroundPosition: 'center',
+                                    mb: 10,
+                                    '@media screen and (max-width: 678px)': {
+                                        mb: 5,
+                                    },
+                                }}
+
+                            >
+
+                                <Box container sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    // backgroundColor: 'primary.white',
+                                    paddingX: '20px',
+                                    paddingY: '20px',
+                                    borderRadius: '10px',
+                                    alignItems: 'center',
+                                    flexDirection: 'column',
+                                    // boxShadow: '0px 12px 39px rgba(0, 0, 0, 0.25)',
+
+                                    '@media screen and (max-width: 678px)': {
+                                        flexDirection: 'column',
+                                        paddingY: '10px',
+                                        alignItems: 'center',
+                                    },
+                                }}>
+                                    <Typography variant='h2' align='center' component='h3' color={'primary.white'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                        }}
+                                    >
+                                        Hotel Booking
+                                    </Typography>
+                                    <Typography variant='subtutle1' align='center' color={'primary.white'}>
+                                        Book Your Dream Hotel
+                                    </Typography>
+                                </Box>
+
+                            </Box>
+                        </Box>
+                    </Stack>
+
+                </Box>
             </Container>
             <div>
                 {/* <Button onClick={handleOpen}>Open modal</Button> */}

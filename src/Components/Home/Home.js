@@ -47,7 +47,7 @@ function Home() {
     useEffect(() => {
 
         setTimeout(() => {
-            setOpen(true);
+            setOpen(false);
         }, 3000)
 
     }, [])

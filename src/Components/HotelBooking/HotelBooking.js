@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../Footer/Footer'
 import NavBar from '../NavBar/NavBar'
+import Subscribe from '../Subscribe/Subscribe'
 import BookingForm from './BookingForm'
 
 const HotelBooking = () => {
@@ -8,6 +9,7 @@ const HotelBooking = () => {
         <>
             <NavBar />
             <BookingForm />
+            <Subscribe/>
             <Footer/>
         </>
     )
