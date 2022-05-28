@@ -1,14 +1,18 @@
-import { Container, Typography, Modal, Box, Stack, TextField, Paper, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material'
+import {
+    Container, Typography, Modal, Box, Stack, TextField,
+    Paper, FormControl, InputLabel, Select, MenuItem, Button,
+    List, ListItem, ListItemIcon, ListItemText
+} from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useJsApiLoader, Autocomplete } from '@react-google-maps/api'
-import { DatePicker, LocalizationProvider, TimePicker, TabContext, TabList, TabPanel, MobileTimePicker, LoadingButton } from '@mui/lab';
+import { DatePicker, LocalizationProvider, LoadingButton } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { Form, UseForm } from '../UseForm/UseForm';
 // import emailjs from 'emailjs-com'
 import emailjs from '@emailjs/browser'
-import SendIcon from '@mui/icons-material/Send';
+// import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
-
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 const BookingForm = () => {
 
     let navigate = useNavigate()
@@ -175,12 +179,13 @@ const BookingForm = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width:{xs:285, md:400},
         bgcolor: 'background.paper',
         border: '0px solid #000',
         boxShadow: 24,
         p: 4,
         borderRadius: 2,
+      
     };
 
 
@@ -367,7 +372,7 @@ const BookingForm = () => {
                     </Stack>
                 </Paper>
 
-                <Box mb={5}>
+                <Box mb={10}>
                     <Typography variant='body2' mb={3}>
                         The year 2022 is witnessing a spike in the number of people staying in hotels and dining out to relax from their stressful daily life. In a city like Dubai, where the world’s stunning architectures are situated, the residents and tourists alike like to spend their holidays by choosing the best hotels in the city. The hotels in the UAE are welcoming their guests with the best packages ever and they make sure their customers return to them for the next staycation as well.
                     </Typography>
@@ -375,15 +380,15 @@ const BookingForm = () => {
                         Business travelers staying in the country are not less in number and they too prefer an ambience where they can work, relax, and feel home when at a hotel. Hotels in Dubai provide all the facilities necessary for corporates with fastest Wi-Fi connections, uninterrupted power supply, and other necessary amenities such as work desk, comfy chairs, and lamps.
                     </Typography>
                 </Box>
-                <Box mb={4}>
-                <Typography variant='h4' component='h2' sx={{
-                                fontWeight: 700,
-                            }}>
-                                A stay as comfortable as at home!
-                            </Typography>
-                    <Stack direction='row' alignItems='center' justifyContent='space-between'>
+                <Box container mb={10}>
+                    <Typography variant='h4' component='h2' sx={{
+                        fontWeight: 700,
+                    }}>
+                        A stay as comfortable as at home!
+                    </Typography>
+                    <Stack direction={{ xs: 'column-reverse', md: 'row' }} spacing={7} alignItems='center' >
                         <Box>
-                          
+
                             <Typography variant='body2' mt={2}>
                                 Goyaka has tie ups with the UAE’s best hotels and we help you book the best-in-class rooms for you to make your stay in the country more memorable. In line with the Expo 2020, the convergence of sustainability and hygiene is an area of innovation in the hospitality sector now. Our primary goal is to provide our guests with shelter, food, refreshment, and other services, offering a homely atmosphere for people on a journey away from home.
                             </Typography>
@@ -391,63 +396,257 @@ const BookingForm = () => {
                                 We offer the best list of hotels in the most affordable budgets for your enquiries with us. One of our executives will get in touch with you once you submit the enquiry using the above enquiry form. We accept all modes of payments and make the entire process hassle-free. *Free cancellation up to 24 hours prior to check-in is available. We make the search easier for you!
                             </Typography>
                         </Box>
-                        <Box>
-                            <Box
-                                Container
-                                sx={{
-                                    height: 'auto',
-                                    width: '100%',
-                                    objectFit: 'cover',
-                                    borderRadius: '25px',
-                                    // backgroundColor: '#000',
-                                    opacity: 1,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    backgroundImage: 'linear-gradient(20deg, rgb(0 0 0 / 56%), rgb(0 0 0 / 15%)),url(./images/hotel_booking.jpg)',
-                                    backgroundSize: 'cover',
-                                    justifyContent: 'center',
-                                    backgroundPosition: 'center',
-                                    mb: 10,
-                                    '@media screen and (max-width: 678px)': {
-                                        mb: 5,
-                                    },
-                                }}
-
-                            >
-
-                                <Box container sx={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    // backgroundColor: 'primary.white',
-                                    paddingX: '20px',
-                                    paddingY: '20px',
-                                    borderRadius: '10px',
-                                    alignItems: 'center',
-                                    flexDirection: 'column',
-                                    // boxShadow: '0px 12px 39px rgba(0, 0, 0, 0.25)',
-
-                                    '@media screen and (max-width: 678px)': {
-                                        flexDirection: 'column',
-                                        paddingY: '10px',
-                                        alignItems: 'center',
-                                    },
-                                }}>
-                                    <Typography variant='h2' align='center' component='h3' color={'primary.white'}
-                                        sx={{
-                                            fontWeight: 'bold',
-                                        }}
-                                    >
-                                        Hotel Booking
-                                    </Typography>
-                                    <Typography variant='subtutle1' align='center' color={'primary.white'}>
-                                        Book Your Dream Hotel
-                                    </Typography>
-                                </Box>
-
-                            </Box>
-                        </Box>
+                        <Box component='img'
+                            src='./images/resort.jpg'
+                            alt='hotel-booking'
+                            sx={{
+                                height: 'auto',
+                                width: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '25px',
+                                marginTop: { xs: '40px !important' },
+                            }}
+                        />
                     </Stack>
 
+                </Box>
+                <Box container mb={10}>
+                    <Typography variant='h4' component='h2' mb={3} sx={{
+                        fontWeight: 700,
+                    }}>
+                        Ramada Plaza by Wyndham
+                    </Typography>
+                    <Typography variant='body2'>
+                        Ramada Plaza by Wyndham in Dubai, Deira is an excellent choice for corporate travelers and tourists equally. The hotel is in the historical district of Dubai called Deira. It is conveniently located just 50 meters from the Dubai Metro Station and just 15 minutes from the Dubai International Airport. You can find all the necessary facilities for business and shopping in the proximity of Ramada Plaza. The hotel has 250 sleek and contemporary rooms and suites featuring minimalist, elegant interiors with soundproof windows.
+                    </Typography>
+                    <Box mb={3} mt={2}>
+                        <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 0, md: 3 }}>
+                            <Box>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Indoor pool" />
+
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Spa" />
+
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Hot tub/Jacuzzi" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Fitness center" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Sauna" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Massage" />
+                                    </ListItem>
+                                </List>
+                            </Box>
+
+                            <Box>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Sauna" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Hairstyling" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Manicure" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Head massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Locker rooms" />
+                                    </ListItem>
+
+                                </List>
+                            </Box>
+                            <Box>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Back massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Waxing services" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Nightclub/DJ" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Beauty services" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Spa facilities" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Haircut" />
+                                    </ListItem>
+
+                                </List>
+
+                            </Box>
+                            <Box>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Full-body massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Facial treatments" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Foot massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Makeup services" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Hand massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Pedicure" />
+                                    </ListItem>
+
+                                </List>
+
+                            </Box>
+                            <Box>
+                                <List>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Body treatments" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Hair treatments" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Fitness" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Hair coloring" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Neck massage" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Steam room" />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemIcon>
+                                            <CheckCircleOutlineIcon fontSize='small' color='primary' />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Indoor pool (year-round)" />
+                                    </ListItem>
+                                </List>
+
+                            </Box>
+
+                        </Stack>
+                    </Box>
+                    <Box>
+                        <Typography variant='body2' mb={3}>
+                            The hotel also offers state-of-the-art meeting rooms intuitively designed to facilitate the corporate meetings and events. The fully equipped halls offer comprehensive technical support, which includes internet connectivity, projectors, speakers, mic, etc.
+                        </Typography>
+                        <Typography variant='body2'>
+                            Apart from Ramada Plaza, we have tie-ups with numerous 4-stars and 5-stars rated hotels in the UAE, in all emirates. Please get in touch with us to find the best one for your stay in the UAE.
+                        </Typography>
+                    </Box>
                 </Box>
             </Container>
             <div>
@@ -459,6 +658,18 @@ const BookingForm = () => {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
+                    <Box component='img'
+                    mb={5}
+                            src='./images/hotel_booking.jpg'
+                            alt='hotel-booking'
+                            sx={{
+                                height: 'auto',
+                                width: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '25px',
+                                // marginTop: { xs: '40px !important' },
+                            }}
+                        />
                         <Stack spacing={3} component={Form} onSubmit={sendEmail}>
                             <TextField variant='outlined' size='small'
                                 label='Your Name'

@@ -112,7 +112,11 @@ const SingleTour = ({ dataId }) => {
                                     color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
                             </Box>
 
-
+<Box>
+    <Typography>
+        {packageItem.shortDescription}
+    </Typography>
+</Box>
 
 
                         </Box>

@@ -115,6 +115,9 @@ const NavBar = () => {
                 <Typography textAlign="center" onClick={() => { navigate("/hotel-booking"); }}> Hotel Booking</Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" onClick={() => { navigate("/visa"); }}> Visa Booking</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center" onClick={() => { navigate("/about-us"); }}> About Us</Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -177,6 +180,16 @@ const NavBar = () => {
             >
               {/* {page} */}
               Hotel Booking
+            </Button>
+            <Button
+              // key={page}
+              onClick={() => { navigate("/visa"); }}
+              color='cusBlack'
+
+              sx={{ mr: 4, display: 'block', textTransform: 'capitalize', fontWeight: '500', fontSize: '16px' }}
+            >
+              {/* {page} */}
+              Visa Booking
             </Button>
             {/* <Button
              

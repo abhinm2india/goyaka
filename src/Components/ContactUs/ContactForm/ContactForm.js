@@ -62,7 +62,7 @@ const ContactForm = () => {
                                         <ListItemIcon>
                                             <PhoneIcon color='primary' />
                                         </ListItemIcon>
-                                        <ListItemText primary="+971 045914066" />
+                                        <ListItemText primary="+971 45914066" />
 
                                     </ListItem>
                                     <ListItem>

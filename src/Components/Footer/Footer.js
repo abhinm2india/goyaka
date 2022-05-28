@@ -157,7 +157,7 @@ const Footer = () => {
                                 </ListItem>
                                 <ListItem alignItems='flex-start' disablePadding>
                                     <ListItemText>
-                                        +971 045914066
+                                        +971 45914066
                                     </ListItemText>
 
                                 </ListItem>
