@@ -3,26 +3,27 @@ import {
     Typography, Modal, Box, Stack, TextField,
     Paper, FormControl, InputLabel, Select, MenuItem, Button,
 } from '@mui/material'
-
-import { LoadingButton } from '@mui/lab';
 import { UseForm } from '../UseForm/UseForm';
 // import emailjs from 'emailjs-com'
 import emailjs from '@emailjs/browser'
 // import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
-
+import { DatePicker, LocalizationProvider, LoadingButton } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import MuiPhoneNumber from 'material-ui-phone-number';
+import 'react-phone-input-2/lib/material.css'
 
 const VisBookingForm = () => {
 
     let navigate = useNavigate();
 
     const [loading, setLoading] = useState(false);
-
+    const [dob, setDob] = React.useState(new Date());
     const [userCountry, setUserCountry] = useState('');
     const [visaType, setVisaType] = useState('');
     const [visaDuration, setVisaDuration] = useState('');
     const [emailResponse, setEmailResponse] = useState(null);
-
+const [phnum,setPhnum] = useState('');
     const [openSecM, setOpenSecM] = useState(false);
     const handleCloseSecM = () => {
         setOpenSecM(false)
@@ -33,6 +34,7 @@ const VisBookingForm = () => {
         userName: '',
         userEmail: '',
         userPhone: '',
+        userPassport: '',
 
     }
 
@@ -47,6 +49,7 @@ const VisBookingForm = () => {
     const validate = () => {
         let temp = {}
         temp.userName = formValues.userName ? "" : "This field is required."
+        temp.userPassport = formValues.userPassport ? "" : "This field is required."
         temp.userEmail = (/$^|.+@.+..+/).test(formValues.userEmail) ? "" : "Email is not valid."
         temp.userPhone = formValues.userPhone.length >= 9 ? "" : "Mobile number not valid."
         // temp.paymentMode = formValues.paymentMode.length != 0 ? "" : "This field is required"
@@ -65,10 +68,12 @@ const VisBookingForm = () => {
             const templateParams = {
                 name: formValues.userName,
                 email: formValues.userEmail,
-                phoneNumber: formValues.userPhone,
+                phoneNumber: phnum,
                 userCountry,
-                visaType,
-                visaDuration
+                visaType: 'Visit Visa',
+                visaDuration,
+                userPassport: formValues.userPassport,
+                dob: dob,
 
             };
 
@@ -107,6 +112,11 @@ const VisBookingForm = () => {
 
     };
 
+    const handleOnChange = (val) => {
+setPhnum(val)
+    }
+
+
     return (
         <>
             <Paper
@@ -114,7 +124,7 @@ const VisBookingForm = () => {
                     border: '0px solid #000',
                     borderRadius: '10px',
                     boxShadow: 'rgb(0 0 0 / 17%) 0px 6px 29px -4px',
-                backgroundColor:'#fff5f7',
+                    backgroundColor: '#fff5f7',
                     marginBottom: 10,
 
                 }}
@@ -123,9 +133,9 @@ const VisBookingForm = () => {
                 <Stack spacing={3} component='form' onSubmit={handleSubmit}
                     padding={{ xs: 3, md: 5 }}
                 >
-                    <Typography variant='h5'>Book Your VISA</Typography>
+                    <Typography variant='h5'>Book Your Visit VISA</Typography>
                     <Stack alignItems='center' justifyContent='center'
-                        direction={{ xs: 'column', sm: 'row', md:'column' }}
+                        direction={{ xs: 'column', sm: 'row', md: 'column' }}
                         spacing={{ xs: 2, sm: 2, md: 2 }}
                     >
 
@@ -139,7 +149,7 @@ const VisBookingForm = () => {
                                 onChange={(e) => setUserCountry(e.target.value)}
                                 displayEmpty
                                 required
-                                
+
                             >
                                 <MenuItem value={'India'}>India</MenuItem>
                                 <MenuItem value={'USA'}>USA</MenuItem>
@@ -152,7 +162,7 @@ const VisBookingForm = () => {
 
                             </Select>
                         </FormControl>
-                        <FormControl fullWidth size='small'>
+                        {/* <FormControl fullWidth size='small'>
                             <InputLabel id="demo-simple-select-label" >Visa Type</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
@@ -164,12 +174,11 @@ const VisBookingForm = () => {
                                 required
                             >
                                 <MenuItem value={'visiting visa'}>Visiting Visa</MenuItem>
-                                <MenuItem value={'Work Visa'}>Work Visa</MenuItem>
-
+                               
                             </Select>
-                        </FormControl>
+                        </FormControl> */}
                         <FormControl fullWidth size='small'>
-                            <InputLabel id="demo-simple-select-label" >Visa Duration</InputLabel>
+                            <InputLabel id="demo-simple-select-label" >Visit Visa Duration</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="visa-duration"
@@ -188,7 +197,7 @@ const VisBookingForm = () => {
 
                     </Stack>
                     <Stack alignItems='center' justifyContent='center'
-                        direction={{ xs: 'column', sm: 'row', md:'column' }}
+                        direction={{ xs: 'column', sm: 'row', md: 'column' }}
                         spacing={{ xs: 2, sm: 2, md: 2 }}
                     >
                         <TextField variant='outlined' fullWidth size='small'
@@ -206,13 +215,43 @@ const VisBookingForm = () => {
                             onChange={handleInputChange}
                             helperText={errors.userEmail}
                         />
-                        <TextField variant='outlined' size='small' fullWidth color='primary'
+                        {/* <TextField variant='outlined' size='small' fullWidth color='primary'
                             label='Phone Number'
                             name='userPhone'
                             value={formValues.userPhone}
                             onChange={handleInputChange}
                             helperText={errors.userPhone}
+                        /> */}
+                        <MuiPhoneNumber defaultCountry={'ae'} variant='outlined' size='small' 
+                        fullWidth
+                        label='Phone Number'
+                        name='userPhone'
+                       
+                        onChange={handleOnChange}
+                        helperText={errors.userPhone}
+                       required
                         />
+
+                        <TextField variant='outlined' size='small' fullWidth color='primary'
+                            label='Passport Number'
+                            name='userPassport'
+                            value={formValues.userPassport}
+                            onChange={handleInputChange}
+                            helperText={errors.userPassport}
+                        />
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <DatePicker
+                                views={['day']}
+                                label="Date of birth"
+                                value={dob}
+                                onChange={(newDate) => {
+                                    setDob(newDate);
+                                }}
+                                renderInput={(params) => <TextField {...params} fullWidth required size='small' helperText={null} />}
+                            />
+
+
+                        </LocalizationProvider>
                     </Stack>
                     <Stack direction={{ xs: 'column', sm: 'row' }}
                         spacing={{ xs: 2, sm: 2, md: 4 }} alignItems='center' justifyContent='center'>

@@ -18,10 +18,10 @@ export const AboutHero = () => {
                     backgroundSize: 'cover',
                     justifyContent: 'center',
                     backgroundPosition: 'center',
-mb:10,
-'@media screen and (max-width: 678px)': {
-   mb:5,
-},
+                    mb: 10,
+                    '@media screen and (max-width: 678px)': {
+                        mb: 5,
+                    },
                 }}
 
             >
@@ -51,7 +51,7 @@ mb:10,
                         GOYAKA TOURS AND TRAVELS
                     </Typography>
                     <Typography variant='subtutle1' align='center' color={'primary.white'}>
-                    We Promise a Journey That You Will Cherish Forever!
+                        We Promise a Journey That You Will Cherish Forever!
                     </Typography>
                 </Box>
 

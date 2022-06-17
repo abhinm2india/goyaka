@@ -33,7 +33,7 @@ const Car = () => {
                     },
                 }}>
                     <Box>
-                        <Typography variant='h6' color='primary' component='h6'>
+                        <Typography variant='h6' color='primary' color='primary.white' component='h6'>
                            LUXURY CARS
                         </Typography>
                     </Box>

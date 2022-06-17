@@ -86,7 +86,7 @@ const About = () => {
                                 marginY: '30px',
                             }}>
                                 <Button variant='contained'
-                                onClick={() => { navigate("/about-us"); }}
+                                    onClick={() => { navigate("/about-us"); }}
                                     sx={{
                                         color: 'primary.white',
                                     }}>Read More</Button>

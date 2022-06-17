@@ -179,13 +179,13 @@ const BookingForm = () => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width:{xs:285, md:400},
+        width: { xs: 285, md: 400 },
         bgcolor: 'background.paper',
         border: '0px solid #000',
         boxShadow: 24,
         p: 4,
         borderRadius: 2,
-      
+
     };
 
 
@@ -260,7 +260,7 @@ const BookingForm = () => {
                     <Stack spacing={3} component='form' onSubmit={handleSubmit}
                         padding={{ xs: 3, md: 5 }}
                     >
-                        <Stack alignItems='center' justifyContent='center'
+                        <Stack alignItems='flex-start' justifyContent='space-between'
                             direction={{ xs: 'column', sm: 'row' }}
                             spacing={{ xs: 2, sm: 2, md: 4 }}
                         >
@@ -277,6 +277,7 @@ const BookingForm = () => {
                                         border: '5px solid primary',
                                     }}
                                     required
+                                    fullWidth
                                 />
                             </Autocomplete>
                             <Autocomplete onLoad={dropOnLoad} onPlaceChanged={getDropCordinates}>
@@ -311,7 +312,7 @@ const BookingForm = () => {
 
                         </Stack>
                         <Stack direction={{ xs: 'column', sm: 'row' }}
-                            spacing={{ xs: 2, sm: 2, md: 4 }} alignItems='center' justifyContent='center'>
+                            spacing={{ xs: 2, sm: 2, md: 4 }} alignItems='flex-start' justifyContent='space-between'>
 
                             <FormControl fullWidth size='small'>
                                 <InputLabel id="demo-simple-select-label" >Adults</InputLabel>
@@ -416,9 +417,29 @@ const BookingForm = () => {
                     }}>
                         Ramada Plaza by Wyndham
                     </Typography>
-                    <Typography variant='body2'>
-                        Ramada Plaza by Wyndham in Dubai, Deira is an excellent choice for corporate travelers and tourists equally. The hotel is in the historical district of Dubai called Deira. It is conveniently located just 50 meters from the Dubai Metro Station and just 15 minutes from the Dubai International Airport. You can find all the necessary facilities for business and shopping in the proximity of Ramada Plaza. The hotel has 250 sleek and contemporary rooms and suites featuring minimalist, elegant interiors with soundproof windows.
-                    </Typography>
+
+                    <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
+                        <Box component='img'
+                            src='./images/rpw.jpg'
+                            alt='hotel-booking'
+                            sx={{
+                                height: 'auto',
+                                width: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '25px',
+                            }}
+                        />
+                        <Box>
+                            <Typography variant='body2'>
+                                Ramada Plaza by Wyndham in Dubai, Deira is an excellent choice for corporate travelers and tourists equally. The hotel is in the historical district of Dubai called Deira. It is conveniently located just 50 meters from the Dubai Metro Station and just 15 minutes from the Dubai International Airport. You can find all the necessary facilities for business and shopping in the proximity of Ramada Plaza. The hotel has 250 sleek and contemporary rooms and suites featuring minimalist, elegant interiors with soundproof windows.
+                            </Typography>
+                            <Typography variant='body2' mt={2} mb={3}>
+                                The hotel also offers state-of-the-art meeting rooms intuitively designed to facilitate the corporate meetings and events. The fully equipped halls offer comprehensive technical support, which includes internet connectivity, projectors, speakers, mic, etc.
+                            </Typography>
+                        </Box>
+
+                    </Stack>
+
                     <Box mb={3} mt={2}>
                         <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 0, md: 3 }}>
                             <Box>
@@ -640,9 +661,7 @@ const BookingForm = () => {
                         </Stack>
                     </Box>
                     <Box>
-                        <Typography variant='body2' mb={3}>
-                            The hotel also offers state-of-the-art meeting rooms intuitively designed to facilitate the corporate meetings and events. The fully equipped halls offer comprehensive technical support, which includes internet connectivity, projectors, speakers, mic, etc.
-                        </Typography>
+
                         <Typography variant='body2'>
                             Apart from Ramada Plaza, we have tie-ups with numerous 4-stars and 5-stars rated hotels in the UAE, in all emirates. Please get in touch with us to find the best one for your stay in the UAE.
                         </Typography>
@@ -658,8 +677,8 @@ const BookingForm = () => {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
-                    <Box component='img'
-                    mb={5}
+                        <Box component='img'
+                            mb={5}
                             src='./images/hotel_booking.jpg'
                             alt='hotel-booking'
                             sx={{

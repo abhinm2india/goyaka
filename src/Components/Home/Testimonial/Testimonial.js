@@ -36,7 +36,7 @@ const Testimonial = () => {
                             sx={{
                                 color: 'primary.black',
                                 fontWeight: 'bold',
-
+                                textAlign: 'center',
                             }}
                         >
                             What Our

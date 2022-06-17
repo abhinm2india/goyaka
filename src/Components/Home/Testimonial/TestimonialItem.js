@@ -8,24 +8,24 @@ const TestimonialItem = ({ item }) => {
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: 'column',
-            paddingY:'30px',
-            
+            // paddingBottom: '30px',
+            height: '49vh',
         }}>
-            <Box component='img' src={item.photo}
-                sx={{
-                    width: '100px',
-                    height: '100px',
-                    objectFit: 'cover',
-                    borderRadius: '100%',
-                    marginBottom: '40px',
-                }}
-            ></Box>
+
+            <Box component='img' src={item.photo} sx={{
+                width: '100px',
+                height: '100px',
+                objectFit: 'cover',
+                borderRadius: '100%',
+                marginBottom: '40px',
+            }} />
+
             <Box container sx={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexDirection: 'column',
-                marginBottom: '30px',
+                // marginBottom: '30px',
             }}>
                 <Typography variant='h6' color='primary'>{item.name}</Typography>
                 <Rating value={item.rating} precision={0.5} readOnly />

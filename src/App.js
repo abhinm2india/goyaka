@@ -14,6 +14,11 @@ import VehicleDetails from "./Components/Transport/VehicleDetails/VehicleDetails
 import Booking from "./Components/Booking/Booking";
 import HotelBooking from "./Components/HotelBooking/HotelBooking";
 import Visa from "./Components/Visa/Visa";
+
+import Fab from '@mui/material/Fab';
+
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
 function App() {
   let mytheme = responsiveFontSizes(theme);
   return (
@@ -28,6 +33,8 @@ function App() {
       <Router basename="/">
       {/* <Router> */}
         <Routes>
+       
+     
           <Route exact path="/" element={<Home />} />
           <Route path="/tour" element={<TourPackage />} />
           <Route path="/tour-details" element={<SinglePackage />} />
@@ -38,9 +45,22 @@ function App() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/hotel-booking" element={<HotelBooking />} />
           <Route path="/visa" element={<Visa/>}/>
+       
         </Routes>
       </Router>
 
+      {/* https://wa.me/971502736276?text=Hi, Can you provide me details? */}
+
+      <Fab color="primary" aria-label="whatsapp" 
+      href="https://wa.me/971502736276?text=Hi, Can you provide me details?"
+      sx={{
+        position:'fixed',
+        right:0,
+        bottom:0,
+        margin:'10px'
+      }}>
+        <WhatsAppIcon />
+      </Fab>
     </ThemeProvider>
   );
 }

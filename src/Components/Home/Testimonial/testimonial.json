@@ -4,17 +4,5 @@
         "message": "We chose the Dubai tour package from Goyaka for our last vacation. The tour was amazing, especially the desert safari. Our driver was helpful and a good guide in explaining us everything about the country’s tradition, culture, cuisines, etc. We are happy that we chose Goyaka.",
         "rating":"3.5",
         "photo":"./images/user.jpg"
-    },
-    {
-        "name": "Jushaid",
-        "message": "Probably the most random thing you have ever seen!",
-        "rating":"4.5",
-        "photo":"./images/user.jpg"
-    },
-    {
-        "name": "Salim",
-        "message": "Probably the most random thing you have ever seen!",
-        "rating":"5",
-        "photo":"./images/user.jpg"
     }
 ]

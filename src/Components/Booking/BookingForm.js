@@ -9,7 +9,7 @@ import axios from 'axios';
 import { Form, UseForm } from '../UseForm/UseForm';
 import Controls from '../Controls/Controls';
 import { useNavigate } from 'react-router-dom';
-
+import MuiPhoneNumber from 'material-ui-phone-number';
 const BookingForm = ({ origin, destination, bookingData }) => {
 
     let navigate = useNavigate();
@@ -62,9 +62,8 @@ const BookingForm = ({ origin, destination, bookingData }) => {
     const [namesign, setNamesign] = useState(false);
     const [specialmsg, setSpecialmsg] = useState(false);
     const [payment, setPayment] = useState('cash');
-    console.log(payment)
-    console.log('booking form')
-    console.log(bookingData)
+    const [phnum, setPhnum] = useState('');
+
     const today = format(bookingData.bdate, 'yyyy-MM-dd kk:mm')
     const pdt = today.split(" ");
 
@@ -88,7 +87,7 @@ const BookingForm = ({ origin, destination, bookingData }) => {
         bookingTimestamp: today,
         userName: '',
         userMail: '',
-        userMobile: '',
+        userMobile: phnum,
     }
 
     const {
@@ -104,7 +103,7 @@ const BookingForm = ({ origin, destination, bookingData }) => {
         let temp = {}
         temp.userName = formValues.userName ? "" : "This field is required."
         temp.userMail = (/$^|.+@.+..+/).test(formValues.userMail) ? "" : "Email is not valid."
-        temp.userMobile = formValues.userMobile.length > 9 ? "" : "Mobile number not valid."
+        // temp.userMobile = formValues.userMobile.length > 9 ? "" : "Mobile number not valid."
         // temp.paymentMode = formValues.paymentMode.length != 0 ? "" : "This field is required"
         setErrors({
             ...temp
@@ -117,20 +116,19 @@ const BookingForm = ({ origin, destination, bookingData }) => {
     const handleSubmit = e => {
         e.preventDefault()
         if (validate()) {
-
             Booking();
         }
     }
 
     const Booking = async () => {
-
+        const formData = { ...formValues }
         // https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebooking
-        await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebookingGoyaka', formValues
+        await axios.post('https://chauffeur.lagoontechcloud.com:4200/api/booking/sitebookingGoyaka', formData
         ).then(function (response) {
-            console.log("bookingNo")
+
 
             const bookingNo = response.data.data.bookingNo
-            console.log(bookingNo)
+
             setBookingRes(response.data)
 
             if (payment === "cash") {
@@ -149,8 +147,7 @@ const BookingForm = ({ origin, destination, bookingData }) => {
                     }
                 }
                 ).then(function (stripRes) {
-                    console.log("stripe response")
-                    console.log(stripRes)
+
                     window.location = stripRes.data.url
 
                 }).catch(function (error) {
@@ -163,7 +160,9 @@ const BookingForm = ({ origin, destination, bookingData }) => {
         })
 
     }
-
+    const handleOnChange = (val) => {
+        setPhnum(val)
+    }
 
     return (
 
@@ -277,32 +276,46 @@ const BookingForm = ({ origin, destination, bookingData }) => {
                             }
                         </Stack>
                     </Stack>
-                    <Stack spacing={3} component={Form} onSubmit={handleSubmit}>
+                    <Stack spacing={3} component='form' onSubmit={handleSubmit}>
                         <Typography>Traveller Details</Typography>
                         <Stack spacing={1}>
 
-                            <Controls.Input
+                            <TextField
                                 name='userName'
                                 label='Your Name'
                                 value={formValues.userName}
                                 onChange={handleInputChange}
-                                error={errors.userName}
+                                helperText={errors.userName}
+                                size='small'
                             />
-                            <Controls.Input
+
+
+                            <TextField
                                 name='userMail'
                                 label='Email'
                                 value={formValues.userMail}
                                 onChange={handleInputChange}
-                                error={errors.userMail}
+
+                                helperText={errors.userMail}
+                                size='small'
                             />
-                            <Controls.Input
+
+                            {/* <Controls.Input
                                 name='userMobile'
                                 label='Phone Number'
                                 value={formValues.userMobile}
                                 onChange={handleInputChange}
                                 error={errors.userMobile}
-                            />
+                            /> */}
+                            <MuiPhoneNumber defaultCountry={'ae'} variant='outlined' size='small'
+                                fullWidth
+                                label='Phone Number'
+                                name='userMobile'
 
+                                onChange={handleOnChange}
+                            // helperText={errors.userMobile}
+
+                            />
 
 
                             {/* <ReactPhoneInput
@@ -339,11 +352,13 @@ const BookingForm = ({ origin, destination, bookingData }) => {
                             </Typography>
                         </Stack>
                         <Stack>
-                            <Controls.Button sx={{
-                                color: "#fff",
-                            }}
+                            <Button
+                                variant='contained'
+                                sx={{
+                                    color: "#fff",
+                                }}
                                 type="submit"
-                                text="Book Now" />
+                            >Book Now</Button>
                             {/* <Button variant="contained">Book Now</Button> */}
                         </Stack>
                     </Stack>
@@ -367,24 +382,24 @@ const BookingForm = ({ origin, destination, bookingData }) => {
                         </Typography>
 
                         <Stack direction='row' spacing={2} mt={3} alignItems='center' justifyContent='center'>
-                        <Button variant='outlined' onClick={()=>{navigate("/")}}>
-                            Do you need to book more?
-                        </Button>
-                        <Typography>OR</Typography>
-                        <Button variant='contained' disableElevation sx={{
-                            color: 'primary.white',
-                            fontSize: '13px',
-                            fontWeight: '600',
-                        }} onClick={handleCloseSecModal}>
-                            Continue
-                        </Button>
+                            <Button variant='outlined' onClick={() => { navigate("/") }}>
+                                Do you need to book more?
+                            </Button>
+                            <Typography>OR</Typography>
+                            <Button variant='contained' disableElevation sx={{
+                                color: 'primary.white',
+                                fontSize: '13px',
+                                fontWeight: '600',
+                            }} onClick={handleCloseSecModal}>
+                                Continue
+                            </Button>
                         </Stack>
-                     
+
                     </Box>
                     <Box component='div' container mt={2} sx={{
                         textAlign: 'center',
                     }}>
-                       
+
                     </Box>
                 </Box>
 

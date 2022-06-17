@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Grid, Typography, Box, Paper, Stack, List, ListItem, ListItemText,ListItemIcon } from '@mui/material'
+import { Container, Grid, Typography, Box, Paper, Stack, List, ListItem, ListItemText, ListItemIcon } from '@mui/material'
 import PhoneIcon from '@mui/icons-material/Phone';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -34,12 +34,12 @@ const GetInTouch = () => {
 
                                     }}
                                 >
-                                     Your Doorway To The City Of Dreams
+                                    Your Doorway To The City Of Dreams
                                 </Typography>
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                              
+
                                 </Typography>
                             </Box>
 
@@ -88,7 +88,7 @@ const GetInTouch = () => {
                             <Paper sx={{
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
-                                backgroundImage: 'url(./images/contactus.png),radial-gradient(circle, red, yellow, green)',
+                                backgroundImage: 'url(./images/contactus.jpg),radial-gradient(circle, red, yellow, green)',
                                 height: '400px',
                                 width: '90%',
 

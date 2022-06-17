@@ -80,7 +80,9 @@ const SingleTour = ({ dataId }) => {
 
                     {/* </Box> */}
                     <Box container>
-                        <Typography variant='h4' mt={3} sx={{
+
+<Stack direction='column' spacing={2}>
+<Typography variant='h4' mt={3} sx={{
                             // fontSize: '13px',
                             // fontWeight: 500,
                             '@media screen and (max-width:678px)': {
@@ -89,6 +91,28 @@ const SingleTour = ({ dataId }) => {
                         }}>
                             {packageItem.name}
                         </Typography>
+                        <Box>
+                                <Rating value={4.5} precision={0.5} readOnly />
+                            </Box>
+                            <Box>
+                                <Typography variant='h5' component='body1'
+                                    sx={{
+                                        fontWeight: 'bold',
+
+                                    }}
+                                    color={'primary'}>{packageItem.price}</Typography>
+                            </Box>
+
+                            <Box>
+                                <Typography>
+                                    {packageItem.shortDescription}
+                                </Typography>
+                            </Box>
+</Stack>
+
+                       
+
+
                         <Box container sx={{
                             display: 'flex',
                             alignItems: 'center',
@@ -100,23 +124,7 @@ const SingleTour = ({ dataId }) => {
                             },
                         }}>
 
-                            <Box>
-                                <Rating value={4.5} precision={0.5} readOnly />
-                            </Box>
-                            <Box>
-                                <Typography variant='h5' component='body1'
-                                    sx={{
-                                        fontWeight: 'bold',
-
-                                    }}
-                                    color={'primary'} marginLeft={4}>{packageItem.price}</Typography>
-                            </Box>
-
-<Box>
-    <Typography>
-        {packageItem.shortDescription}
-    </Typography>
-</Box>
+                         
 
 
                         </Box>

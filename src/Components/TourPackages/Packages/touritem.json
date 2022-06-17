@@ -5,7 +5,7 @@
         "rating": 4.5,
         "price": "AED: 99 (Shared Bus)",
         "image": "./images/dubai/goyaka_dubai_tour_28.jpg",
-        "shortDescription":"",
+        "shortDescription":"Dubai is a city to cherish! Likewise, the other cities in the UAE also have a lot to offer. Visit your favorite destinations with a tour guide to learn and feel the aesthetics of the world-renowned monuments, places of historical value, heritage villages, the most modern architectures, shopping malls, adventure parks, and the sceneries.",
         "longDescription": [
             "Port Rashid",
             "Dry Docks",
@@ -35,7 +35,7 @@
         "rating": 3.5,
         "price": "AED: 100",
         "image": "./images/dubai/goyaka_dubai_tour_14.jpg",
-        "shortDescription":"",
+        "shortDescription":"The Dubai Dolphinarium is one of the best family entertainment destinations in the UAE. Avoid the scorching heat outside in the summer and enjoy the most unique indoor family entertainments including Mirror Maze, Dolphin & Seal Show, Creek Park Bird Show, and if you wish, Swim with the Dolphins too!",
         "longDescription": "",
         "gallery":[
             "./images/dubai/goyaka_dubai_tour_15.jpg",
@@ -67,7 +67,7 @@
         "rating": 3.5,
         "price": "AED: 250",
         "image": "./images/dubai/goyaka_dubai_tour_08.jpg",
-        "shortDescription":"",
+        "shortDescription":"The tallest building in the world—Burj Khalifa—is a stunning art of wonder. Walk around and explore At the Top, Sky and the Lounge, the Underwater Zoo & Dubai Aquarium now at a pocket-friendly rate. Dubai Aquarium & the Underwater Zoo hosts thousands of aquatic animals of over 140 species. Go face to face with over 400 sharks and rays, among other aquatic animals living in the 10-million-liter tank here. A perfect day out destination for kids and family!",
         "longDescription": "",
         "gallery":[
             "./images/dubai/goyaka_dubai_tour_08.jpg",
@@ -83,7 +83,7 @@
         "rating": 3.5,
         "price": "AED: 145",
         "image": "./images/dubai/goyaka_dubai_tour_04.jpg",
-        "shortDescription":"",
+        "shortDescription":"Get inspired and empowered from the architectural and engineering marvel. Museum of the future, situated in the Sheikh Zayed Road, opens a new path away from the skyscrapers. The circular shape of the building symbolizes humanity, the void represents the unknown future, and the green mound it sits atop represents the earth. The place is an inspiration to all. Visit the Museum of the Future in as low as AED 145 per head.",
         "longDescription": "",
         "gallery":[
             "./images/dubai/goyaka_dubai_tour_04.jpg",
@@ -98,7 +98,7 @@
         "rating": 3.5,
         "price": "AED: 55",
         "image": "./images/dubai/goyaka_dubai_tour_01.jpg",
-        "shortDescription":"",
+        "shortDescription":"The Dubai Frame offers a walk through the Old Dubai, Present Dubai, and the Future Dubai starting from the Mezzanine floor to Sky deck level and again to the Swirl tunnel in the mezzanine floor while exiting the frame. It is the UAE’s one of the cultural landmarks that serves as a metaphorical bridge connecting the country’s rich past with the stunning present. Enjoy the amazing panoramic view across the city from the Skydeck level with Goyaka Tours.",
         "longDescription": "",
         "gallery":[
             "./images/dubai/goyaka_dubai_tour_01.jpg",

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button, Container, Grid, Paper, Typography, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
-import PoolIcon from '@mui/icons-material/Pool';
+import { Container, Grid, Paper, Typography, Box, } from '@mui/material'
+// import PoolIcon from '@mui/icons-material/Pool';
 const Resort = () => {
     return (
         <Container>
@@ -12,6 +12,9 @@ const Resort = () => {
                     <Grid item xs={6}>
                         <Box container sx={{
                             paddingRight: '50px',
+                            '@media screen and (max-width:678px)': {
+                                paddingRight: '0px',
+                            },
                         }}>
                             <Box>
                                 <Typography variant='h6' color='primary' component='h6'>

@@ -21,7 +21,7 @@ const Hero = () => {
                     // backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) => `${linearGradient(rgba(gradients.dark.main, 0.5), rgba(gradients.dark.state, 0.5))}, url(./images/banner_01.jpg)`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    backgroundImage: 'url(./images/banner_01.jpg),radial-gradient(circle, red, yellow, green)',
+                    backgroundImage: 'url(./images/goyakabanner.jpg),radial-gradient(circle, red, yellow, green)',
                     borderRadius: '20px',
                     backgroundColor: '#000',
 

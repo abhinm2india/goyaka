@@ -62,9 +62,9 @@ const VisaContent = () => {
 
             </Box>
 
-            <Stack direction={{xs:'column-reverse', md:'row'}} spacing={5} justifyContent='space-around'>
+            <Stack direction={{ xs: 'column-reverse', md: 'row' }} spacing={5} justifyContent='space-around'>
                 <Box sx={{
-                    width:{xs:'100%',md:'60%'}
+                    width: { xs: '100%', md: '60%' }
                 }}>
                     <Box container mb={10}>
                         <Typography variant='h4' component='h2' sx={{
@@ -128,13 +128,13 @@ const VisaContent = () => {
                     </Box>
                 </Box>
                 <Box mb={5} sx={{
-                    width:{xs:'100%',md:'40%'}
+                    width: { xs: '100%', md: '40%' }
                 }}>
-                <VisBookingForm />
-            </Box>      
+                    <VisBookingForm />
+                </Box>
             </Stack>
 
-          
+
 
             <Box container mb={10}>
                 <Typography variant='h4' component='h2' sx={{
@@ -142,7 +142,13 @@ const VisaContent = () => {
                 }}>
                     Types of Visas and Entry Permits
                 </Typography>
-                <Stack direction={{ xs: 'column-reverse', md: 'row' }} spacing={7} alignItems='center' >
+                <Stack direction={{ xs: 'column-reverse', md: 'row' }}
+                 spacing={2} 
+                 alignItems='flex-start'
+                 justifyContent='space-between'
+                 >
+
+
                     <Box>
 
                         <Typography variant='body2' mt={2}>
@@ -196,53 +202,54 @@ const VisaContent = () => {
                             To obtain a visit visa to enter the UAE, you need to contact a UAE-based airlines, a tour agency like Goyaka Tours or a hotel (where you plan to stay) in the UAE who will apply visit visa on your behalf to the official visa-issuing authorities in the UAE. We will aid you in getting approvals by submitting the necessary documents to the official bodies and update you with necessary travel guidelines from time to time. Goyaka extends its support by offering tailored tour packages that include desert safari, city tour, limousine rides, chauffeur service, hotel bookings, and guided tours to our guests.
                         </Typography>
                     </Box>
-                    {/* <Box component='img'
-                            src='./images/resort.jpg'
-                            alt='hotel-booking'
-                            sx={{
-                                height: 'auto',
-                                width: '100%',
-                                objectFit: 'cover',
-                                borderRadius: '25px',
-                                marginTop: { xs: '40px !important' },
-                            }}
-                        /> */}
+                    <Box component='img'
+                        src='./images/visa_dubai.jpg'
+                        alt='hotel-booking'
+                        sx={{
+                            height: 'auto',
+                            width: {md:'500px',xs:'320px'},
+                            objectFit: 'cover',
+                            borderRadius: '25px',
+
+                        }}
+                    />
                 </Stack>
 
             </Box>
             <Box container mb={10}>
-                <Typography variant='h4' component='h2' sx={{
+                <Typography variant='h6' sx={{
                     fontWeight: 700,
+                    fontSize: 20,
                 }}>
                     Terms & Conditions for Obtaining Dubai Visa
                 </Typography>
-                <Stack spacing={7} alignItems='center' >
+                <Stack spacing={10} alignItems='flex-start' >
 
 
                     <List>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • Visa application process starts only after all the documents are verified" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • Visa application process starts only after all the documents are verified" />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • Visa application charges depend on the passenger’s nationality" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • Visa application charges depend on the passenger’s nationality" />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • We do not take responsibility for forged documents. We assume all the documents are valid and original and submit the same to the relevant authorities." />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • We do not take responsibility for forged documents. We assume all the documents are valid and original and submit the same to the relevant authorities." />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • We do not guarantee the approval of all visa applications. Visa approval is solely from the Government authority." />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • We do not guarantee the approval of all visa applications. Visa approval is solely from the Government authority." />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • Visa application fee is non-refundable under any circumstances once the application is submitted to the immigration department" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • Visa application fee is non-refundable under any circumstances once the application is submitted to the immigration department" />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • Passengers are expected to enter the country within 14 days of the visa issuance and exit the country within the visa period" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • Passengers are expected to enter the country within 14 days of the visa issuance and exit the country within the visa period" />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="  • Goyaka is not responsible for any crimes attempted during the visit and will be dealt by the UAE Police as per the nation’s law and orders" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="  • Goyaka is not responsible for any crimes attempted during the visit and will be dealt by the UAE Police as per the nation’s law and orders" />
                         </ListItem>
                         <ListItem disablePadding>
-                            <ListItemText primary="   • Travelers are required to have medical insurance while in the country" />
+                            <ListItemText sx={{ fontSize: '15px', fontWeight: '400' }} disableTypography primary="   • Travelers are required to have medical insurance while in the country" />
                         </ListItem>
                     </List>
 

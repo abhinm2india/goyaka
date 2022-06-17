@@ -4,11 +4,12 @@ import Footer from '../Footer/Footer'
 import Choices from '../Home/Choices/Choices'
 import GetInTouch from '../Home/Contact/GetInTouch'
 import Resort from '../Home/Resort/Resort'
-import Testimonial from '../Home/Testimonial/Testimonial'
 import NavBar from '../NavBar/NavBar'
 import Subscribe from '../Subscribe/Subscribe'
 import { AboutHero } from './Banner/AboutHero'
+import Chauffeur from './Chauffeur/Chauffeur'
 import Description from './Description/Description'
+import Services from './Services/Services'
 
 
 const About = () => {
@@ -17,9 +18,10 @@ const About = () => {
             <NavBar />
             <AboutHero />
             <Description />
-            <Choices />
-            <Resort />
-            <Testimonial />
+            {/* <Choices /> */}
+            <Services/>
+            {/* <Resort /> */}
+           <Chauffeur/>
             <GetInTouch />
             <Subscribe />
 

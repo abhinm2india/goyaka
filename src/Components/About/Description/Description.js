@@ -1,16 +1,16 @@
 import React from 'react'
-import { Container, Box, Typography, Grid,Paper } from '@mui/material'
+import { Container, Box, Typography, Grid, Paper } from '@mui/material'
 const Description = () => {
     return (
         <Container>
             <Box container sx={{
-                marginBottom:'80px',
+                marginBottom: '80px',
             }}>
                 <Typography variant='h4' align='center' fontWeight='bold' mb={2}>
-                We Promise a Journey That You Will Cherish Forever!
+                    We Promise a Journey That You Will Cherish Forever!
                 </Typography>
                 <Typography variant='body2' align='center' mb={2}>
-                At Goyaka, you meet a team of wanderlusts dedicated to guide you through the beautiful landscapes in the UAE. Dubai, the city of wonders, welcomes you wholeheartedly to explore the miracles it offers. You need the right travel partner to explore every nook and corner of the country. We are here to offer you a hassle-free travel experience in the UAE.
+                    At Goyaka, you meet a team of wanderlusts dedicated to guide you through the beautiful landscapes in the UAE. Dubai, the city of wonders, welcomes you wholeheartedly to explore the miracles it offers. You need the right travel partner to explore every nook and corner of the country. We are here to offer you a hassle-free travel experience in the UAE.
                 </Typography>
             </Box>
 
@@ -22,7 +22,7 @@ const Description = () => {
                         <Box container sx={{
                             paddingRight: '50px',
                         }}>
-                          
+
                             <Box>
 
                                 <Typography variant='h4' component='h3'
@@ -38,7 +38,7 @@ const Description = () => {
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                Goyaka extends its services in main three areas, to say, Flight Bookings, Hotel Booking, Chauffeur Service. You get an option to choose from our specially tailored tour packages or individual services based on your requirements. With us, you will find an amazing range of luxury vehicles suitable for business travels, family tours, party buses and so on. Goyaka makes sure to tailor each service to meet your specific needs. Would you like to talk to us? Do not wait, call us or book a service via our website to enjoy a luxurious service.
+                                    Goyaka extends its services in main three areas, to say, Flight Bookings, Hotel Booking, Chauffeur Service. You get an option to choose from our specially tailored tour packages or individual services based on your requirements. With us, you will find an amazing range of luxury vehicles suitable for business travels, family tours, party buses and so on. Goyaka makes sure to tailor each service to meet your specific needs. Would you like to talk to us? Do not wait, call us or book a service via our website to enjoy a luxurious service.
                                 </Typography>
                             </Box>
                             <Box container sx={{
@@ -87,7 +87,7 @@ const Description = () => {
                                     </Typography>
                                 </Box>
                             </Box>
-                          
+
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
