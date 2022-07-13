@@ -247,7 +247,7 @@ const Chauffeur = () => {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Stack spacing={{ xs: 0, md: 10 }} direction={{ xs: 'column', md: 'row' }}>
+                                <Stack spacing={{ xs: 0, md: 7 }} direction={{ xs: 'column', md: 'row' }}>
                                     <Box>
                                         <List>
                                             <ListItem disablePadding>
@@ -282,6 +282,11 @@ const Chauffeur = () => {
                                                 <ListItemText primary="Audi A6" />
 
                                             </ListItem>
+
+                                        </List>
+                                    </Box>
+                                    <Box>
+                                        <List>
                                             <ListItem disablePadding>
 
                                                 <ListItemIcon>
@@ -306,10 +311,6 @@ const Chauffeur = () => {
                                                 <ListItemText primary="BMW 5 Series" />
 
                                             </ListItem>
-                                        </List>
-                                    </Box>
-                                    <Box>
-                                        <List>
                                             <ListItem disablePadding>
 
                                                 <ListItemIcon>
@@ -318,6 +319,11 @@ const Chauffeur = () => {
                                                 <ListItemText primary="Mercedes S Class" />
 
                                             </ListItem>
+
+                                        </List>
+                                    </Box>
+                                    <Box>
+                                        <List>
                                             <ListItem disablePadding>
 
                                                 <ListItemIcon>
@@ -350,6 +356,11 @@ const Chauffeur = () => {
                                                 <ListItemText primary="Chevrolet Suburban" />
 
                                             </ListItem>
+
+                                        </List>
+                                    </Box>
+                                    <Box>
+                                        <List>
                                             <ListItem disablePadding>
 
                                                 <ListItemIcon>
@@ -366,6 +377,7 @@ const Chauffeur = () => {
                                                 <ListItemText primary="Stretched Party Limo" />
 
                                             </ListItem>
+                                          
                                         </List>
                                     </Box>
                                 </Stack>
@@ -380,5 +392,4 @@ const Chauffeur = () => {
         </Container>
     )
 }
-
 export default Chauffeur
