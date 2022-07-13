@@ -76,14 +76,11 @@ const VisaContent = () => {
                             <Box>
 
                                 <Typography variant='body2' mt={2}>
-                                    The UAE is one of the safest countries in the world to live in and travel. The lively night life, desert safari, most modern architectures, skyscrapers, the beautiful beaches, and corniches, along with numerous other attractions call the people from all around the world to visit the country. The country offers a safe and easy way to travel by providing visit visas for 30 days, 90 days and 5 years as per the latest regulations by the official visa issuing authorities.                            </Typography>
+                                    The UAE is one of the safest countries in the world to live in and travel. The lively night life, desert safari, most modern architectures, skyscrapers, the beautiful beaches, and corniches, along with numerous other attractions call the people from all around the world to visit the country. The country offers a safe and easy way to travel by providing visit visas for 30 days, 90 days and 5 years as per the latest regulations by the official visa issuing authorities.
+                                </Typography>
                                 <Typography variant='body2' mt={2}>
-                                    The United Arab Emirates' Government portal
-                                    explains that the tourist visas to the UAE can
-                                    be issued for 30 days or 90 days for single or
-                                    multiple entries. You have the flexibility to
-                                    extend the tourist visa for 30 days twice without
-                                    the need to leave the country. Recently, the Government of the UAE has facilitated a five-year visa, which allows the tourists to enter multiple times on self-sponsorship and remain in the country for 90 days on each visit, which can be extended for another 90 days.                            </Typography>
+                                    The United Arab Emirates' Government portal explains that the tourist visas to the UAE can be issued for 30 days or 90 days for single or multiple entries. You have the flexibility to extend the tourist visa for 30 days twice without the need to leave the country. Recently, the Government of the UAE has facilitated a five-year visa, which allows the tourists to enter multiple times on self-sponsorship and remain in the country for 90 days on each visit, which can be extended for another 90 days.
+                                </Typography>
                             </Box>
                             {/* <Box component='img'
                             src='./images/resort.jpg'
@@ -109,7 +106,8 @@ const VisaContent = () => {
                             <Box>
 
                                 <Typography variant='body2' mt={2}>
-                                    To obtain a visit visa to enter the UAE, you need to contact a UAE-based airlines, a tour agency like Goyaka Tours or a hotel (where you plan to stay) in the UAE who will apply visit visa on your behalf to the official visa-issuing authorities in the UAE. We will aid you in getting approvals by submitting the necessary documents to the official bodies and update you with necessary travel guidelines from time to time. Goyaka extends its support by offering tailored tour packages that include desert safari, city tour, limousine rides, chauffeur service, hotel bookings, and guided tours to our guests.                            </Typography>
+                                To obtain a visit visa to enter the UAE, you need to contact a UAE-based airlines, a tour agency like Goyaka Tours or a hotel (where you plan to stay) in the UAE who will apply visit visa on your behalf to the official visa-issuing authorities in the UAE. We will aid you in getting approvals by submitting the necessary documents to the official bodies and update you with necessary travel guidelines from time to time. Goyaka extends its support by offering tailored tour packages that include desert safari, city tour, limousine rides, chauffeur service, hotel bookings, and guided tours to our guests.
+                                    </Typography>
 
                             </Box>
                             {/* <Box component='img'
@@ -143,16 +141,16 @@ const VisaContent = () => {
                     Types of Visas and Entry Permits
                 </Typography>
                 <Stack direction={{ xs: 'column-reverse', md: 'row' }}
-                 spacing={2} 
-                 alignItems='flex-start'
-                 justifyContent='space-between'
-                 >
+                    spacing={2}
+                    alignItems='flex-start'
+                    justifyContent='space-between'
+                >
 
 
                     <Box>
 
                         <Typography variant='body2' mt={2}>
-                            To obtain a visit visa to enter the UAE, you need to contact a UAE-based airlines, a tour agency like Goyaka Tours or a hotel (where you plan to stay) in the UAE who will apply visit visa on your behalf to the official visa-issuing authorities in the UAE. We will aid you in getting approvals by submitting the necessary documents to the official bodies and update you with necessary travel guidelines from time to time. Goyaka extends its support by offering tailored tour packages that include desert safari, city tour, limousine rides, chauffeur service, hotel bookings, and guided tours to our guests.
+                        Depending on the purpose of your visit you can avail different types of visas and entry permits from the UAE Government. 
                         </Typography>
                         <List>
                             <ListItem disablePadding>
@@ -199,7 +197,7 @@ const VisaContent = () => {
                             </ListItem>
                         </List>
                         <Typography variant='body2' mt={2}>
-                            To obtain a visit visa to enter the UAE, you need to contact a UAE-based airlines, a tour agency like Goyaka Tours or a hotel (where you plan to stay) in the UAE who will apply visit visa on your behalf to the official visa-issuing authorities in the UAE. We will aid you in getting approvals by submitting the necessary documents to the official bodies and update you with necessary travel guidelines from time to time. Goyaka extends its support by offering tailored tour packages that include desert safari, city tour, limousine rides, chauffeur service, hotel bookings, and guided tours to our guests.
+                        Get in touch with us if you are looking to avail any of these visas. We will guide you with the best options available. Do not miss the amazing offers we have for you, call us now!
                         </Typography>
                     </Box>
                     <Box component='img'
@@ -207,7 +205,7 @@ const VisaContent = () => {
                         alt='hotel-booking'
                         sx={{
                             height: 'auto',
-                            width: {md:'500px',xs:'320px'},
+                            width: { md: '500px', xs: '320px' },
                             objectFit: 'cover',
                             borderRadius: '25px',
 

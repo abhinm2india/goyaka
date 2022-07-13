@@ -38,7 +38,7 @@ const Description = () => {
                             </Box>
                             <Box>
                                 <Typography variant='body1'>
-                                    Goyaka extends its services in main three areas, to say, <code style={{color:'red',backgroundColor:'rgb(166 0 0 / 11%)', padding:'1px 5px', borderRadius:'6px',lineHeight:'1.5'}}>Flight Bookings, Hotel Booking, Chauffeur Service.</code> You get an option to choose from our specially tailored tour packages or individual services based on your requirements. With us, you will find an amazing range of luxury vehicles suitable for business travels, family tours, party buses and so on. Goyaka makes sure to tailor each service to meet your specific needs. Would you like to talk to us? Do not wait, call us or book a service via our website to enjoy a luxurious service.
+                                    Goyaka extends its services in main three areas, to say, Flight Bookings, Hotel Booking, Chauffeur Service. You get an option to choose from our specially tailored tour packages or individual services based on your requirements. With us, you will find an amazing range of luxury vehicles suitable for business travels, family tours, party buses and so on. Goyaka makes sure to tailor each service to meet your specific needs. Would you like to talk to us? Do not wait, call us or book a service via our website to enjoy a luxurious service.
                                 </Typography>
                             </Box>
                             <Box container sx={{
